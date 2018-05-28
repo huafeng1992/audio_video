@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7820B24A4D8FC0FC92A1265D /* Pods_____.framework */; };
+		EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86920B65F8500B5D802 /* AppDelegate.swift */; };
+		EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86B20B65F8500B5D802 /* ViewController.swift */; };
+		EC08E86F20B65F8500B5D802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC08E86D20B65F8500B5D802 /* Main.storyboard */; };
+		EC08E87120B65F8600B5D802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC08E87020B65F8600B5D802 /* Assets.xcassets */; };
+		EC08E87420B65F8600B5D802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC08E87220B65F8600B5D802 /* LaunchScreen.storyboard */; };
+		EC08E87F20B65F8600B5D802 /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E87E20B65F8600B5D802 /* ____Tests.swift */; };
+		EC08E88A20B65F8600B5D802 /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E88920B65F8600B5D802 /* ____UITests.swift */; };
+		EC08E89820B661CC00B5D802 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89720B661CC00B5D802 /* VideoController.swift */; };
+		EC08E89A20B661DD00B5D802 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89920B661DD00B5D802 /* AudioController.swift */; };
+		EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89D20B6697600B5D802 /* RecordManager.swift */; };
+		EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16712020BBA6400030E86D /* ICSandboxHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC08E87B20B65F8600B5D802 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC08E85E20B65F8500B5D802 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC08E86520B65F8500B5D802;
+			remoteInfo = "音频视频";
+		};
+		EC08E88620B65F8600B5D802 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC08E85E20B65F8500B5D802 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC08E86520B65F8500B5D802;
+			remoteInfo = "音频视频";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.debug.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.debug.xcconfig"; sourceTree = "<group>"; };
+		7820B24A4D8FC0FC92A1265D /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.release.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.release.xcconfig"; sourceTree = "<group>"; };
+		EC08E86620B65F8500B5D802 /* 音频视频.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "音频视频.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC08E86920B65F8500B5D802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC08E86B20B65F8500B5D802 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC08E86E20B65F8500B5D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC08E87020B65F8600B5D802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC08E87320B65F8600B5D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC08E87520B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC08E87A20B65F8600B5D802 /* 音频视频Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "音频视频Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC08E87E20B65F8600B5D802 /* ____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____Tests.swift"; sourceTree = "<group>"; };
+		EC08E88020B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC08E88520B65F8600B5D802 /* 音频视频UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "音频视频UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC08E88920B65F8600B5D802 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
+		EC08E88B20B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC08E89720B661CC00B5D802 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		EC08E89920B661DD00B5D802 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		EC08E89D20B6697600B5D802 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		EC16711720BB9E520030E86D /* 音频视频-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "音频视频-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC16711D20BBA5660030E86D /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EC16712020BBA6400030E86D /* ICSandboxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSandboxHelper.m; sourceTree = "<group>"; };
+		EC16712120BBA6400030E86D /* ICSandboxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSandboxHelper.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC08E86320B65F8500B5D802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E87720B65F8600B5D802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E88220B65F8600B5D802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99DA35B00B969A488A9EF51E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7820B24A4D8FC0FC92A1265D /* Pods_____.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99E68E4D414123F045A2E4E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */,
+				E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC08E85D20B65F8500B5D802 = {
+			isa = PBXGroup;
+			children = (
+				EC08E86820B65F8500B5D802 /* 音频视频 */,
+				EC08E87D20B65F8600B5D802 /* 音频视频Tests */,
+				EC08E88820B65F8600B5D802 /* 音频视频UITests */,
+				EC08E86720B65F8500B5D802 /* Products */,
+				99E68E4D414123F045A2E4E6 /* Pods */,
+				99DA35B00B969A488A9EF51E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC08E86720B65F8500B5D802 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E86620B65F8500B5D802 /* 音频视频.app */,
+				EC08E87A20B65F8600B5D802 /* 音频视频Tests.xctest */,
+				EC08E88520B65F8600B5D802 /* 音频视频UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC08E86820B65F8500B5D802 /* 音频视频 */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E86920B65F8500B5D802 /* AppDelegate.swift */,
+				EC08E86B20B65F8500B5D802 /* ViewController.swift */,
+				EC16711D20BBA5660030E86D /* R.generated.swift */,
+				EC16711E20BBA6400030E86D /* Tool */,
+				EC08E89C20B661E800B5D802 /* 视频 */,
+				EC08E89B20B661E000B5D802 /* 音频 */,
+				EC08E86D20B65F8500B5D802 /* Main.storyboard */,
+				EC08E87020B65F8600B5D802 /* Assets.xcassets */,
+				EC16711720BB9E520030E86D /* 音频视频-Bridging-Header.h */,
+				EC08E87220B65F8600B5D802 /* LaunchScreen.storyboard */,
+				EC08E87520B65F8600B5D802 /* Info.plist */,
+			);
+			path = "音频视频";
+			sourceTree = "<group>";
+		};
+		EC08E87D20B65F8600B5D802 /* 音频视频Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E87E20B65F8600B5D802 /* ____Tests.swift */,
+				EC08E88020B65F8600B5D802 /* Info.plist */,
+			);
+			path = "音频视频Tests";
+			sourceTree = "<group>";
+		};
+		EC08E88820B65F8600B5D802 /* 音频视频UITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E88920B65F8600B5D802 /* ____UITests.swift */,
+				EC08E88B20B65F8600B5D802 /* Info.plist */,
+			);
+			path = "音频视频UITests";
+			sourceTree = "<group>";
+		};
+		EC08E89B20B661E000B5D802 /* 音频 */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E89920B661DD00B5D802 /* AudioController.swift */,
+				EC08E89D20B6697600B5D802 /* RecordManager.swift */,
+			);
+			path = "音频";
+			sourceTree = "<group>";
+		};
+		EC08E89C20B661E800B5D802 /* 视频 */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E89720B661CC00B5D802 /* VideoController.swift */,
+			);
+			path = "视频";
+			sourceTree = "<group>";
+		};
+		EC16711E20BBA6400030E86D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				EC16711F20BBA6400030E86D /* ICSandboxHelper */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		EC16711F20BBA6400030E86D /* ICSandboxHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EC16712120BBA6400030E86D /* ICSandboxHelper.h */,
+				EC16712020BBA6400030E86D /* ICSandboxHelper.m */,
+			);
+			path = ICSandboxHelper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC08E86520B65F8500B5D802 /* 音频视频 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC08E88E20B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频" */;
+			buildPhases = (
+				D331709A891A79284BE50A93 /* [CP] Check Pods Manifest.lock */,
+				EC08E86220B65F8500B5D802 /* Sources */,
+				EC08E86320B65F8500B5D802 /* Frameworks */,
+				EC08E86420B65F8500B5D802 /* Resources */,
+				666965741C6B8AEB4C184125 /* [CP] Embed Pods Frameworks */,
+				9FA2FF2557400BAED15891CE /* [CP] Copy Pods Resources */,
+				EC16711C20BBA4500030E86D /* R.swift */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "音频视频";
+			productName = "音频视频";
+			productReference = EC08E86620B65F8500B5D802 /* 音频视频.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC08E87920B65F8600B5D802 /* 音频视频Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC08E89120B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频Tests" */;
+			buildPhases = (
+				EC08E87620B65F8600B5D802 /* Sources */,
+				EC08E87720B65F8600B5D802 /* Frameworks */,
+				EC08E87820B65F8600B5D802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC08E87C20B65F8600B5D802 /* PBXTargetDependency */,
+			);
+			name = "音频视频Tests";
+			productName = "音频视频Tests";
+			productReference = EC08E87A20B65F8600B5D802 /* 音频视频Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC08E88420B65F8600B5D802 /* 音频视频UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC08E89420B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频UITests" */;
+			buildPhases = (
+				EC08E88120B65F8600B5D802 /* Sources */,
+				EC08E88220B65F8600B5D802 /* Frameworks */,
+				EC08E88320B65F8600B5D802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC08E88720B65F8600B5D802 /* PBXTargetDependency */,
+			);
+			name = "音频视频UITests";
+			productName = "音频视频UITests";
+			productReference = EC08E88520B65F8600B5D802 /* 音频视频UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC08E85E20B65F8500B5D802 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = hf;
+				TargetAttributes = {
+					EC08E86520B65F8500B5D802 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					EC08E87920B65F8600B5D802 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = EC08E86520B65F8500B5D802;
+					};
+					EC08E88420B65F8600B5D802 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = EC08E86520B65F8500B5D802;
+					};
+				};
+			};
+			buildConfigurationList = EC08E86120B65F8500B5D802 /* Build configuration list for PBXProject "音频视频" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC08E85D20B65F8500B5D802;
+			productRefGroup = EC08E86720B65F8500B5D802 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC08E86520B65F8500B5D802 /* 音频视频 */,
+				EC08E87920B65F8600B5D802 /* 音频视频Tests */,
+				EC08E88420B65F8600B5D802 /* 音频视频UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC08E86420B65F8500B5D802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC08E87420B65F8600B5D802 /* LaunchScreen.storyboard in Resources */,
+				EC08E87120B65F8600B5D802 /* Assets.xcassets in Resources */,
+				EC08E86F20B65F8500B5D802 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E87820B65F8600B5D802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E88320B65F8600B5D802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		666965741C6B8AEB4C184125 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA2FF2557400BAED15891CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D331709A891A79284BE50A93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-音频视频-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC16711C20BBA4500030E86D /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/音频视频\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC08E86220B65F8500B5D802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */,
+				EC08E89820B661CC00B5D802 /* VideoController.swift in Sources */,
+				EC08E89A20B661DD00B5D802 /* AudioController.swift in Sources */,
+				EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */,
+				EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */,
+				EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E87620B65F8600B5D802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC08E87F20B65F8600B5D802 /* ____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC08E88120B65F8600B5D802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC08E88A20B65F8600B5D802 /* ____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC08E87C20B65F8600B5D802 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC08E86520B65F8500B5D802 /* 音频视频 */;
+			targetProxy = EC08E87B20B65F8600B5D802 /* PBXContainerItemProxy */;
+		};
+		EC08E88720B65F8600B5D802 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC08E86520B65F8500B5D802 /* 音频视频 */;
+			targetProxy = EC08E88620B65F8600B5D802 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC08E86D20B65F8500B5D802 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC08E86E20B65F8500B5D802 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC08E87220B65F8600B5D802 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC08E87320B65F8600B5D802 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC08E88C20B65F8600B5D802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC08E88D20B65F8600B5D802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC08E88F20B65F8600B5D802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36LDEQHC2A;
+				INFOPLIST_FILE = "音频视频/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "音频视频/音频视频-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
+			};
+			name = Debug;
+		};
+		EC08E89020B65F8600B5D802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36LDEQHC2A;
+				INFOPLIST_FILE = "音频视频/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "音频视频/音频视频-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}";
+			};
+			name = Release;
+		};
+		EC08E89220B65F8600B5D802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "音频视频Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/音频视频.app/音频视频";
+			};
+			name = Debug;
+		};
+		EC08E89320B65F8600B5D802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "音频视频Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/音频视频.app/音频视频";
+			};
+			name = Release;
+		};
+		EC08E89520B65F8600B5D802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "音频视频UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "音频视频";
+			};
+			name = Debug;
+		};
+		EC08E89620B65F8600B5D802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "音频视频UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "音频视频";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC08E86120B65F8500B5D802 /* Build configuration list for PBXProject "音频视频" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC08E88C20B65F8600B5D802 /* Debug */,
+				EC08E88D20B65F8600B5D802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC08E88E20B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC08E88F20B65F8600B5D802 /* Debug */,
+				EC08E89020B65F8600B5D802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC08E89120B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC08E89220B65F8600B5D802 /* Debug */,
+				EC08E89320B65F8600B5D802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC08E89420B65F8600B5D802 /* Build configuration list for PBXNativeTarget "音频视频UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC08E89520B65F8600B5D802 /* Debug */,
+				EC08E89620B65F8600B5D802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC08E85E20B65F8500B5D802 /* Project object */;
+}
