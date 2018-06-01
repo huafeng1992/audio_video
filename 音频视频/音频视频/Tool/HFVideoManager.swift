@@ -2,7 +2,7 @@
 //  HFVideoManager.swift
 //  音频视频
 //
-//  Created by 王华峰 on 2018/6/1.
+//  Created by hf on 2018/6/1.
 //  Copyright © 2018年 hf. All rights reserved.
 //
 
@@ -13,19 +13,15 @@ import AVFoundation
 class HFVideoManager: NSObject {
     
     static let manager = HFVideoManager()
-//    var filename: String = {
-//        let filename = ""
-//        return filename
-//    }()
 }
 
 extension HFVideoManager {
     
-    func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, filename: String?) {
+    open func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, filename: String?) {
     }
     
     // 转换视频 completionHandler 回掉转换状态
-    func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String, completionHandler: @escaping (AVAssetExportSessionStatus) -> Void ) {
+    open func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String, completionHandler: @escaping (AVAssetExportSessionStatus) -> Void ) {
         if let exportSession = export(inAvAsset: avAsset, preset: preset, toFileType: toFileType, filename: filename, fileFix: fileFix) {
             exportSession.exportAsynchronously {
                 completionHandler(exportSession.status)
@@ -33,7 +29,7 @@ extension HFVideoManager {
         }
     }
     
-    func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String) {
+    open func avAssetExport(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String) {
         
         if let exportSession = export(inAvAsset: avAsset, preset: preset, toFileType: toFileType, filename: filename, fileFix: fileFix) {
             
@@ -57,7 +53,7 @@ extension HFVideoManager {
         }
     }
     
-    func export(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String) -> AVAssetExportSession? {
+    private func export(inAvAsset avAsset: AVAsset?, preset: String, toFileType: AVFileType, filename: String?, fileFix: String) -> AVAssetExportSession? {
         
         guard let avAsset = avAsset else {
             print(FUNCTION_PASCAL)
@@ -85,6 +81,7 @@ extension HFVideoManager {
                 try! fileManager.createDirectory(atPath: video_output, withIntermediateDirectories: true, attributes: nil)
             }
         }
+        
         if filename == nil { //用时间给文件全名，以免重复
             let formater = DateFormatter.init()
             formater.dateFormat = "yyyy-MM-dd-HH-mm-ss"
@@ -95,13 +92,26 @@ extension HFVideoManager {
             print(path)
         }
         
-        path = "\(path).mp4"
-        //
+        // 添加后缀名
+        path = "\(path)\(retToFileTypeFix(toFileType))"
+        
         exportSession!.outputURL = URL.init(fileURLWithPath: path)
         exportSession!.outputFileType = toFileType
         exportSession!.shouldOptimizeForNetworkUse = true  // 优化文件用以网络使用
         return exportSession!
     }
+    
+    fileprivate func retToFileTypeFix(_ fileType: AVFileType) -> String {
+        
+        switch fileType {
+        case .mp4: return ".mp4"
+        case .mov: return ".mov"
+        default: return ""
+        }
+    }
+    
+    
+    
     
     
 }

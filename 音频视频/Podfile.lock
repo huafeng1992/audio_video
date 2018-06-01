@@ -1,4 +1,5 @@
 PODS:
+  - AliyunOSSiOS (2.10.4)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
@@ -6,16 +7,18 @@ PODS:
   - TZImagePickerController (2.1.3)
 
 DEPENDENCIES:
+  - AliyunOSSiOS
   - R.swift
   - SnapKit
   - TZImagePickerController (~> 2.1.3)
 
 SPEC CHECKSUMS:
+  AliyunOSSiOS: e5dcdba99963ca6b43fea863cead49423c5d4c75
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   TZImagePickerController: fde8400e08503c5334d8fa4c3c484ca5a7b3cc5b
 
-PODFILE CHECKSUM: 9f9219d862561b6e16eadb4407c07947e310566d
+PODFILE CHECKSUM: 59ddd86a0188ce8df9273c077d237aee60c55092
 
 COCOAPODS: 1.4.0

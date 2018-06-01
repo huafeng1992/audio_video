@@ -10,9 +10,13 @@ import Foundation
 import Photos
 import TZImagePickerController
 import AVKit
+import AliyunOSSiOS
 
 class VideoController: UIViewController {
     
+//    let videoUrl = "http://192.168.1.72:8080/resources/low.mp4"
+    
+    let videoUrl = "https://github.com/huafeng1992/audio_video/blob/master/low.mp4"
     let size1Lab = UILabel()
     let size2Lab = UILabel()
     let showImgView = UIImageView()
@@ -27,6 +31,14 @@ class VideoController: UIViewController {
         
         title = "Video"
         view.backgroundColor = .white
+        
+        
+        // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
+        let credential = OSSStsTokenCredentialProvider.init(accessKeyId: AccessKeyId, secretKeyId: AccessKeySecret, securityToken: "SecurityToken")
+        let client = OSSClient.init(endpoint: endpoint, credentialProvider: credential)
+        //        client = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
+        
+        
         
         
         setUI()
@@ -78,26 +90,18 @@ extension VideoController: TZImagePickerControllerDelegate {
     
     @objc func tapAction() {
         
-        
         TZImageManager.default().getVideoWithAsset(self.assetData) { (playerItem, info) in
+
+//            HFVideoManager.manager.avAssetExport(inAvAsset: playerItem?.asset, preset: AVAssetExportPresetMediumQuality, toFileType: .mp4, filename: "clear", fileFix: "H")
             
-//            "AVAssetExportPresetLowQuality",
-//            "AVAssetExportPresetAppleM4A",
-//            "AVAssetExportPresetHighestQuality",
-//            "AVAssetExportPresetMediumQuality",
-            
-            HFVideoManager.manager.avAssetExport(inAvAsset: playerItem?.asset, preset: AVAssetExportPresetMediumQuality, toFileType: .mp4, filename: nil, fileFix: "H")
-            
-//            let play = AVPlayerViewController()
-//            play.player = AVPlayer.init(playerItem: playerItem)
-//            play.showsPlaybackControls = true
-//            play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
-//            self.present(play, animated: true, completion: nil)
+            let play = AVPlayerViewController()
+            play.player = AVPlayer.init(playerItem: playerItem)
+            play.showsPlaybackControls = true
+            play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
+            self.present(play, animated: true, completion: {
+                play.player?.play()
+            })
         }
-        
-        
-        
-        
         
 //        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPresetLowQuality, success: { (outputPath) in
 //

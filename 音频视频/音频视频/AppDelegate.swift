@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import AliyunOSSiOS
+
+
+let AccessKeyId = "LTAITEik9vgh0oCw"
+let AccessKeySecret = "dNYTKApxj4OZEhwhaH30rvOZCqwSFT"
+let endpoint = "https://xiaohe-online.oss-cn-beijing-internal.aliyuncs.com"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+//        外网：EndPoint：oss-cn-beijing.aliyuncs.com
+//        访问域名：xiaohe-online.oss-cn-beijing.aliyuncs.com
+//        内网： EndPoint：oss-cn-beijing-internal.aliyuncs.com
+//        访问域名：xiaohe-online.oss-cn-beijing-internal.aliyuncs.com
+        
+        
         return true
     }
 

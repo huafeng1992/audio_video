@@ -9,4 +9,6 @@ pod 'SnapKit'
 pod 'R.swift'
 pod 'TZImagePickerController', '~> 2.1.3'
 
+pod 'AliyunOSSiOS'
+
 end

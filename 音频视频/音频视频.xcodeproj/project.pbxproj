@@ -20,6 +20,9 @@
 		EC10105A20BE39FD00A1DF7F /* AlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10105920BE39FC00A1DF7F /* AlertSheet.swift */; };
 		EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16712020BBA6400030E86D /* ICSandboxHelper.m */; };
 		EC48F4DA20C0E2AD009D60B7 /* HFVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */; };
+		EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC48F4DB20C1217B009D60B7 /* libresolv.tbd */; };
+		EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */; };
+		EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC48F4DF20C1218C009D60B7 /* SystemConfiguration.framework */; };
 		EC71A62420BD0DB000FEE986 /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A62020BD0DB000FEE986 /* Mp3Recorder.m */; };
 		EC71A62920BD0F2B00FEE986 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71A62820BD0F2B00FEE986 /* libmp3lame.a */; };
 		EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71A62C20BD32CC00FEE986 /* AudioPlayerManager.swift */; };
@@ -69,6 +72,9 @@
 		EC16712020BBA6400030E86D /* ICSandboxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSandboxHelper.m; sourceTree = "<group>"; };
 		EC16712120BBA6400030E86D /* ICSandboxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSandboxHelper.h; sourceTree = "<group>"; };
 		EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFVideoManager.swift; sourceTree = "<group>"; };
+		EC48F4DB20C1217B009D60B7 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		EC48F4DF20C1218C009D60B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EC71A62020BD0DB000FEE986 /* Mp3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mp3Recorder.m; sourceTree = "<group>"; };
 		EC71A62220BD0DB000FEE986 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		EC71A62320BD0DB000FEE986 /* Mp3Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mp3Recorder.h; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
+				EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */,
+				EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */,
 				AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */,
 				EC71A62920BD0F2B00FEE986 /* libmp3lame.a in Frameworks */,
 			);
@@ -108,6 +117,9 @@
 		99DA35B00B969A488A9EF51E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC48F4DF20C1218C009D60B7 /* SystemConfiguration.framework */,
+				EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */,
+				EC48F4DB20C1217B009D60B7 /* libresolv.tbd */,
 				7820B24A4D8FC0FC92A1265D /* Pods_____.framework */,
 			);
 			name = Frameworks;
@@ -385,12 +397,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
