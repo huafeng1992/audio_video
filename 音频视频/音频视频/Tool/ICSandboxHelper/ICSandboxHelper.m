@@ -14,37 +14,31 @@
     return NSHomeDirectory();
 }
 
-+ (NSString *)appPath
-{
++ (NSString *)appPath {
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSApplicationDirectory, NSUserDomainMask, YES);
     return [paths objectAtIndex:0];
 }
 
-+ (NSString *)docPath
-{
++ (NSString *)docPath {
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     return [paths objectAtIndex:0];
 }
 
-+ (NSString *)libPrefPath
-{
++ (NSString *)libPrefPath {
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     return [[paths objectAtIndex:0] stringByAppendingFormat:@"/Preferences"];
 }
 
-+ (NSString *)libCachePath
-{
++ (NSString *)libCachePath {
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     return [paths objectAtIndex:0];
 }
 
-+ (NSString *)tmpPath
-{
++ (NSString *)tmpPath {
     return [NSHomeDirectory() stringByAppendingFormat:@"/tmp"];
 }
 
-+ (BOOL)hasLive:(NSString *)path
-{
++ (BOOL)hasLive:(NSString *)path {
     if ( NO == [[NSFileManager defaultManager] fileExistsAtPath:path] ) {
         
         return [[NSFileManager defaultManager] createDirectoryAtPath:path
@@ -55,11 +49,13 @@
     
     return NO;
 }
+
 + (BOOL)isPath:(NSString *)path {
     
     BOOL bo = [[NSFileManager defaultManager] fileExistsAtPath:path];
     return bo;
 }
+
 // 判断是否有该路径，如果有该路径则调用contain 没有则会调用nofind
 + (void)isPath:(NSString *)path contain:(void (^) (NSString* path) )contain nofind:(void (^) (NSString* path))nofind {
     
@@ -70,9 +66,8 @@
     }
 }
 
-
-+ (BOOL)removeFolderInPath:(NSString *)path
-{
++ (BOOL)removeFolderInPath:(NSString *)path {
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager removeItemAtPath:path error:nil]) {
 //        DLog(@"删除成功");

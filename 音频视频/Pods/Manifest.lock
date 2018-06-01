@@ -3,16 +3,19 @@ PODS:
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
   - SnapKit (4.0.0)
+  - TZImagePickerController (2.1.3)
 
 DEPENDENCIES:
   - R.swift
   - SnapKit
+  - TZImagePickerController (~> 2.1.3)
 
 SPEC CHECKSUMS:
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  TZImagePickerController: fde8400e08503c5334d8fa4c3c484ca5a7b3cc5b
 
-PODFILE CHECKSUM: 301c6ec4fcd6459521571163898d8f3f060132a4
+PODFILE CHECKSUM: 9f9219d862561b6e16eadb4407c07947e310566d
 
 COCOAPODS: 1.4.0

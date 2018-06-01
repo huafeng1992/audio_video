@@ -2,7 +2,7 @@
 //  AudioController.swift
 //  音频视频
 //
-//  Created by 王华峰 on 2018/5/24.
+//  Created by 王华峰 on 2018/5/29.
 //  Copyright © 2018年 hf. All rights reserved.
 //
 
@@ -13,20 +13,20 @@ class AudioController: UIViewController {
     
     var timeLab: UILabel!
     var startBtn: UIButton!
-    var pauseBtn: UIButton!
+    var stopBtn: UIButton!
     var playBtn: UIButton!
+    var playBtn2: UIButton!
+    
+    var size1Lab: UILabel!
+    var size2Lab: UILabel!
+    
     let timerStr = "时间："
     
-    
-    var recorder:AVAudioRecorder? //录音器
-    var player:AVAudioPlayer? //播放器
-    var recorderSeetingsDic:[String : Any]? //录音器设置参数数组
     var volumeTimer:Timer! //定时器线程，循环监测录音的音量大小
-    var aacPath: String?   //录音地址
     var volumLab: UILabel! //显示录音音量
     
-    var audioAsset: AVURLAsset!
-    
+    var recorder: AudioManager!
+    var audioPlayer: AudioPlayerManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,147 +34,77 @@ class AudioController: UIViewController {
         title = "Audio"
         view.backgroundColor = .white
         
-        //组合录音文件路径
-        aacPath = "\(ICSandboxHelper.libCachePath()!)/audio"
-        setUI()
-        audioPerpar()
-    }
-    
-    @objc func startBtnClick() {
+        recorder = AudioManager.init(target: self, saveName: "test")
         
-        //初始化录音器
-        recorder = try! AVAudioRecorder(url: URL(string: aacPath!)!,
-                                        settings: recorderSeetingsDic!)
-        if recorder != nil {
-            //开启仪表计数功能
-            recorder!.isMeteringEnabled = true
-            //准备录音
-            recorder!.prepareToRecord()
-            //开始录音
-            recorder!.record()
-            //启动定时器，定时更新录音音量
-//            volumeTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self,
-//                                               selector: #selector(levelTimer),
-//                                               userInfo: nil, repeats: true)
+        recorder.delegateTarget.beginConvertBack = {
+            print("recorder.delegateTarget?.beginConvertBack")
         }
         
+        recorder.delegateTarget.failRecordBack = {
+            print("recorder.delegateTarget?.failRecordBack")
+        }
+        
+        recorder.delegateTarget.recordingBack = { [weak self] (obj, recordTime, volume) in
+            print("recorder.delegateTarget?.recordingBack")
+            self?.timeLab.text = "录制时间：\(recordTime)"
+            
+            if recordTime >= 10 && self != nil {
+                self!.recorder.stopRecord()
+                print("只能录10秒")
+            }
+        }
+        
+        recorder.delegateTarget.endConvertBack = {(data, path) in
+            print(path)
+        }
+        
+        audioPlayer = AudioPlayerManager.init(target: self)
+        
+        audioPlayer.delegateTarget.audioPlayerDidFinish = {(player, flag) in
+            print("播放完了")
+        }
+        
+        audioPlayer.delegateTarget.audioPlayerDidOccur = {(player, error) in
+            
+        }
+        
+        setUI()
+    }
+}
+
+extension AudioController {
+    
+    @objc func startBtnClick() {
+        recorder.startRecord()
     }
     
-    @objc func pauseBtnClick() {
-        //停止录音
-        recorder?.stop()
-        //录音器释放
-        recorder = nil
-        //暂停定时器
-//        volumeTimer.invalidate()
-//        volumeTimer = nil
-        volumLab.text = "录音音量:0"
+    @objc func stop() {
+        recorder.stopRecord()
     }
     
     @objc func playBtnClick() {
-    
-        pauseBtnClick()
         
-        //播放
-        player = try! AVAudioPlayer(contentsOf: URL(string: aacPath!)!)
-        if player == nil {
-            print("播放失败")
-        }else{
-            //让音频通过喇叭播放
-            try! AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-            player?.play()
-            audioTime()
-        }
+        recorder.stopRecord()
+        
+        let path = recorder.getOrigPath()
+        size1Lab.text = "原始大小：\(audioPlayer.getSize(path))"
+        audioPlayer.playAudio(path)
     }
     
-    @objc func levelTimer() {
-        recorder!.updateMeters() // 刷新音量数据
-//        let averageV:Float = recorder!.averagePower(forChannel: 0) //获取音量的平均值
-        let maxV:Float = recorder!.peakPower(forChannel: 0) //获取音量最大值
-        let lowPassResult:Double = pow(Double(10), Double(0.05*maxV))
-        volumLab.text = "录音音量:\(lowPassResult)"
+    @objc func playBtnClick2() {
+        
+        recorder.stopRecord()
+        
+        let path = recorder.getMp3Path()
+        
+        size2Lab.text = "编码大小：\(audioPlayer.getSize(path))"
+        audioPlayer.playAudio(path)
     }
-    
-    func audioTime() {
-        
-//        let url = URL.init(fileURLWithPath: aacPath!)
-//        let asset = AVURLAsset.init(url: url, options: nil)
-        
-        
-        
-        let duration = player!.duration
-        timeLab.text = "音频时长:\(duration)"
-        timeLab.text = "音频时长:\(ICSandboxHelper.getMMSSFromSS("\(duration)")!)"
-        
-        print(timeLab.text)
-        
-        
-//        let data = Data.init(contentsOf: URL.init(fileURLWithPath: URL.init(fileURLWithPath: aacPath!)), options: nil)
-        let size = ICSandboxHelper.fileSize(atPath: aacPath!)
-        let size1 = ICSandboxHelper.fileSize(aacPath!)
-        
-        
-        print(size)
-        print(size1)
-        
-    }
-    
 }
-
-extension AudioController {
-    
-    func audioPerpar() {
-        //初始化录音器
-        let session:AVAudioSession = AVAudioSession.sharedInstance()
-        
-        //设置录音类型
-        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        
-        //设置支持后台
-        try! session.setActive(false)
-        
-        //初始化字典并添加设置参数
-        recorderSeetingsDic = [AVFormatIDKey: NSNumber.init(value: kAudioFormatMPEG4AAC),
-                               AVNumberOfChannelsKey: 2, //录音的声道数，立体声为双声道
-                               AVEncoderAudioQualityKey: 320000,
-                               AVSampleRateKey: 44100.0] //录音器每秒采集的录音样本数
-        
-
-//        recorderSeetingsDic = [AVSampleRateKey:  NSNumber.init(value: 44100.0), //           采样率  8000/11025/22050/44100/96000（影响音频的质量）
-//                               AVFormatIDKey: kAudioFormatMPEG4AAC, // 音频格式
-////                               AVLinearPCMBitDepthKey: 16, // 采样位数  8、16、24、32 默认为16
-//                               AVNumberOfChannelsKey: 2, // 音频通道数 1 或 2
-//                               AVEncoderAudioQualityKey: 320000] // 录音质量
-        
-    }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //MARK:- UI
 extension AudioController {
-
+    
     private func setUI() {
         
         timeLab = UILabel()
@@ -187,6 +117,27 @@ extension AudioController {
             $0.right.equalToSuperview().offset(-20)
         }
         
+        size1Lab = UILabel()
+        view.addSubview(size1Lab)
+        size1Lab.snp.makeConstraints{
+            $0.left.equalTo(timeLab)
+            $0.right.equalTo(timeLab)
+            $0.height.equalTo(40)
+            $0.top.equalTo(timeLab.snp.bottom)
+        }
+        
+        size2Lab = UILabel()
+        view.addSubview(size2Lab)
+        size2Lab.snp.makeConstraints{
+            $0.left.equalTo(timeLab)
+            $0.right.equalTo(timeLab)
+            $0.height.equalTo(40)
+            $0.top.equalTo(size1Lab.snp.bottom)
+        }
+        
+        size1Lab.text = "原始大小："
+        size2Lab.text = "编码大小："
+        
         startBtn = UIButton.init()
         startBtn.backgroundColor = .blue
         startBtn.setTitle("开始", for: .normal)
@@ -198,11 +149,11 @@ extension AudioController {
             $0.right.equalToSuperview().offset(-20)
         }
         
-        pauseBtn = UIButton.init()
-        pauseBtn.backgroundColor = .blue
-        pauseBtn.setTitle("暂停", for: .normal)
-        view.addSubview(pauseBtn)
-        pauseBtn.snp.makeConstraints{
+        stopBtn = UIButton.init()
+        stopBtn.backgroundColor = .blue
+        stopBtn.setTitle("暂停", for: .normal)
+        view.addSubview(stopBtn)
+        stopBtn.snp.makeConstraints{
             $0.top.equalTo(startBtn.snp.bottom).offset(40)
             $0.left.equalToSuperview().offset(20)
             $0.height.equalTo(40)
@@ -211,10 +162,21 @@ extension AudioController {
         
         playBtn = UIButton.init()
         playBtn.backgroundColor = .blue
-        playBtn.setTitle("播放", for: .normal)
+        playBtn.setTitle("原文件播放", for: .normal)
         view.addSubview(playBtn)
         playBtn.snp.makeConstraints{
-            $0.top.equalTo(pauseBtn.snp.bottom).offset(40)
+            $0.top.equalTo(stopBtn.snp.bottom).offset(40)
+            $0.left.equalToSuperview().offset(20)
+            $0.height.equalTo(40)
+            $0.right.equalToSuperview().offset(-20)
+        }
+        
+        playBtn2 = UIButton.init()
+        playBtn2.backgroundColor = .blue
+        playBtn2.setTitle("编码文件播放", for: .normal)
+        view.addSubview(playBtn2)
+        playBtn2.snp.makeConstraints{
+            $0.top.equalTo(playBtn.snp.bottom).offset(40)
             $0.left.equalToSuperview().offset(20)
             $0.height.equalTo(40)
             $0.right.equalToSuperview().offset(-20)
@@ -228,22 +190,13 @@ extension AudioController {
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(40)
-            $0.top.equalTo(playBtn.snp.bottom).offset(40)
+            $0.top.equalTo(playBtn2.snp.bottom).offset(40)
         }
         
-        
-//        startBtn.addTarget(self, action: #selector(longTapAction), for: .touchUpInside)
         startBtn.addTarget(self, action: #selector(startBtnClick), for: .touchUpInside)
-        pauseBtn.addTarget(self, action: #selector(pauseBtnClick), for: .touchUpInside)
+        stopBtn.addTarget(self, action: #selector(stop), for: .touchUpInside)
         playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
+        playBtn2.addTarget(self, action: #selector(playBtnClick2), for: .touchUpInside)
     }
     
 }
-
-
-
-
-
-
-
-

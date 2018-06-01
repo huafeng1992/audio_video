@@ -16,9 +16,15 @@
 		EC08E87F20B65F8600B5D802 /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E87E20B65F8600B5D802 /* ____Tests.swift */; };
 		EC08E88A20B65F8600B5D802 /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E88920B65F8600B5D802 /* ____UITests.swift */; };
 		EC08E89820B661CC00B5D802 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89720B661CC00B5D802 /* VideoController.swift */; };
-		EC08E89A20B661DD00B5D802 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89920B661DD00B5D802 /* AudioController.swift */; };
 		EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89D20B6697600B5D802 /* RecordManager.swift */; };
+		EC10105A20BE39FD00A1DF7F /* AlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10105920BE39FC00A1DF7F /* AlertSheet.swift */; };
 		EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16712020BBA6400030E86D /* ICSandboxHelper.m */; };
+		EC48F4DA20C0E2AD009D60B7 /* HFVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */; };
+		EC71A62420BD0DB000FEE986 /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A62020BD0DB000FEE986 /* Mp3Recorder.m */; };
+		EC71A62920BD0F2B00FEE986 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC71A62820BD0F2B00FEE986 /* libmp3lame.a */; };
+		EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71A62C20BD32CC00FEE986 /* AudioPlayerManager.swift */; };
+		EC71A62F20BD37FA00FEE986 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71A62E20BD37FA00FEE986 /* AudioController.swift */; };
+		EC8875BF20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +62,20 @@
 		EC08E88920B65F8600B5D802 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
 		EC08E88B20B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC08E89720B661CC00B5D802 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
-		EC08E89920B661DD00B5D802 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		EC08E89D20B6697600B5D802 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		EC10105920BE39FC00A1DF7F /* AlertSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSheet.swift; sourceTree = "<group>"; };
 		EC16711720BB9E520030E86D /* 音频视频-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "音频视频-Bridging-Header.h"; sourceTree = "<group>"; };
 		EC16711D20BBA5660030E86D /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EC16712020BBA6400030E86D /* ICSandboxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSandboxHelper.m; sourceTree = "<group>"; };
 		EC16712120BBA6400030E86D /* ICSandboxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSandboxHelper.h; sourceTree = "<group>"; };
+		EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFVideoManager.swift; sourceTree = "<group>"; };
+		EC71A62020BD0DB000FEE986 /* Mp3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mp3Recorder.m; sourceTree = "<group>"; };
+		EC71A62220BD0DB000FEE986 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		EC71A62320BD0DB000FEE986 /* Mp3Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mp3Recorder.h; sourceTree = "<group>"; };
+		EC71A62820BD0F2B00FEE986 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		EC71A62C20BD32CC00FEE986 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		EC71A62E20BD37FA00FEE986 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoImagePickerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */,
+				EC71A62920BD0F2B00FEE986 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +183,8 @@
 		EC08E89B20B661E000B5D802 /* 音频 */ = {
 			isa = PBXGroup;
 			children = (
-				EC08E89920B661DD00B5D802 /* AudioController.swift */,
-				EC08E89D20B6697600B5D802 /* RecordManager.swift */,
+				EC71A61F20BD0DB000FEE986 /* lame */,
+				EC71A62E20BD37FA00FEE986 /* AudioController.swift */,
 			);
 			path = "音频";
 			sourceTree = "<group>";
@@ -182,9 +197,20 @@
 			path = "视频";
 			sourceTree = "<group>";
 		};
+		EC10105820BE39FC00A1DF7F /* AlertSheet */ = {
+			isa = PBXGroup;
+			children = (
+				EC10105920BE39FC00A1DF7F /* AlertSheet.swift */,
+			);
+			path = AlertSheet;
+			sourceTree = "<group>";
+		};
 		EC16711E20BBA6400030E86D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */,
+				EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */,
+				EC10105820BE39FC00A1DF7F /* AlertSheet */,
 				EC16711F20BBA6400030E86D /* ICSandboxHelper */,
 			);
 			path = Tool;
@@ -197,6 +223,27 @@
 				EC16712020BBA6400030E86D /* ICSandboxHelper.m */,
 			);
 			path = ICSandboxHelper;
+			sourceTree = "<group>";
+		};
+		EC71A61F20BD0DB000FEE986 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				EC08E89D20B6697600B5D802 /* RecordManager.swift */,
+				EC71A62C20BD32CC00FEE986 /* AudioPlayerManager.swift */,
+				EC71A62220BD0DB000FEE986 /* lame.h */,
+				EC71A62320BD0DB000FEE986 /* Mp3Recorder.h */,
+				EC71A62020BD0DB000FEE986 /* Mp3Recorder.m */,
+				EC71A62720BD0F2B00FEE986 /* lib */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		EC71A62720BD0F2B00FEE986 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EC71A62820BD0F2B00FEE986 /* libmp3lame.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,11 +387,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,11 +454,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8875BF20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift in Sources */,
+				EC71A62420BD0DB000FEE986 /* Mp3Recorder.m in Sources */,
 				EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */,
 				EC08E89820B661CC00B5D802 /* VideoController.swift in Sources */,
-				EC08E89A20B661DD00B5D802 /* AudioController.swift in Sources */,
 				EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */,
+				EC48F4DA20C0E2AD009D60B7 /* HFVideoManager.swift in Sources */,
+				EC10105A20BE39FD00A1DF7F /* AlertSheet.swift in Sources */,
+				EC71A62F20BD37FA00FEE986 /* AudioController.swift in Sources */,
 				EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */,
+				EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */,
 				EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +647,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/音频视频/音频/lame/",
+					"$(PROJECT_DIR)/音频视频/音频/lame/lib",
+					"$(PROJECT_DIR)/音频视频/音频/lame",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"SnapKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "音频视频/音频视频-Bridging-Header.h";
@@ -616,6 +683,19 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/音频视频/音频/lame/",
+					"$(PROJECT_DIR)/音频视频/音频/lame/lib",
+					"$(PROJECT_DIR)/音频视频/音频/lame",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"SnapKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
