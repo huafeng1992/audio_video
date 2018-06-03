@@ -14,9 +14,8 @@ import AliyunOSSiOS
 
 class VideoController: UIViewController {
     
-//    let videoUrl = "http://192.168.1.72:8080/resources/low.mp4"
-    
-    let videoUrl = "https://github.com/huafeng1992/audio_video/blob/master/low.mp4"
+    let videoUrl = "http://a-image-demo.oss-cn-qingdao.aliyuncs.com/demo.mp4"
+    let videoPre = "http://a-image-demo.oss-cn-qingdao.aliyuncs.com/demo.mp4?x-oss-process=video/snapshot,t_7000,f_jpg,w_800,h_600,m_fast"
     let size1Lab = UILabel()
     let size2Lab = UILabel()
     let showImgView = UIImageView()
@@ -26,6 +25,8 @@ class VideoController: UIViewController {
     var avasset1: AVAsset?
     var avasset2: AVAsset?
     
+    var medias = [Media]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,12 +34,10 @@ class VideoController: UIViewController {
         view.backgroundColor = .white
         
         
-        // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
-        let credential = OSSStsTokenCredentialProvider.init(accessKeyId: AccessKeyId, secretKeyId: AccessKeySecret, securityToken: "SecurityToken")
-        let client = OSSClient.init(endpoint: endpoint, credentialProvider: credential)
+//        // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
+//        let credential = OSSStsTokenCredentialProvider.init(accessKeyId: AccessKeyId, secretKeyId: AccessKeySecret, securityToken: "SecurityToken")
+//        let client = OSSClient.init(endpoint: endpoint, credentialProvider: credential)
         //        client = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
-        
-        
         
         
         setUI()
@@ -74,7 +73,7 @@ extension VideoController {
     }
 }
 
-extension VideoController: TZImagePickerControllerDelegate {
+extension VideoController: TZImagePickerControllerDelegate, MediaBrowserDelegate {
     
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
         
@@ -86,73 +85,84 @@ extension VideoController: TZImagePickerControllerDelegate {
         if let asset = assets![0] as? PHAsset {
             self.assetData = asset
         }
+        
+        medias.removeAll()
+        
+        
+        let media = Media.init(videoURL: URL.init(string: videoUrl)!, previewImageURL: URL.init(string: videoPre))
+        medias.append(media)
+        
+        for asset in assets {
+            
+            let asset = asset as! PHAsset
+            
+            let media = Media.init(asset: asset, targetSize: CGSize.init(width: kw, height: kh))
+            medias.append(media)
+        }
+        
     }
     
     @objc func tapAction() {
         
-        TZImageManager.default().getVideoWithAsset(self.assetData) { (playerItem, info) in
-
-//            HFVideoManager.manager.avAssetExport(inAvAsset: playerItem?.asset, preset: AVAssetExportPresetMediumQuality, toFileType: .mp4, filename: "clear", fileFix: "H")
-            
-            let play = AVPlayerViewController()
-            play.player = AVPlayer.init(playerItem: playerItem)
-            play.showsPlaybackControls = true
-            play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
-            self.present(play, animated: true, completion: {
-                play.player?.play()
-            })
-        }
         
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPresetLowQuality, success: { (outputPath) in
+//        let playerItem = AVPlayerItem.init(url: URL.init(string: videoUrl)!)
 //
-//            print("AVAssetExportPresetLowQuality:\(ICSandboxHelper.fileSize(outputPath))")
-//            let play = AVPlayerViewController()
-//            play.player = AVPlayer.init(url: URL.init(fileURLWithPath: outputPath!))
-//            play.showsPlaybackControls = true
-//            play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
-//            self.present(play, animated: true, completion: nil)
-//
-//        }, failure: { (errorMessage, error) in
-//
+//        let play = AVPlayerViewController()
+//        play.player = AVPlayer.init(playerItem: playerItem)
+//        play.showsPlaybackControls = true
+//        play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
+//        self.present(play, animated: true, completion: {
+//            play.player?.play()
 //        })
         
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPresetMediumQuality, success: { (outputPath) in
+//        TZImageManager.default().getVideoWithAsset(self.assetData) { (playerItem, info) in
 //
-//            print("AVAssetExportPresetMediumQuality:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
+////            HFVideoManager.manager.avAssetExport(inAvAsset: playerItem?.asset, preset: AVAssetExportPresetMediumQuality, toFileType: .mp4, filename: "clear", fileFix: "H")
 //
-//        })
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPresetHighestQuality, success: { (outputPath) in
+////            let play = AVPlayerViewController()
+////            play.player = AVPlayer.init(playerItem: playerItem)
+////            play.showsPlaybackControls = true
+////            play.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
+////            self.present(play, animated: true, completion: {
+////                play.player?.play()
+////            })
 //
-//            print("AVAssetExportPresetHighestQuality:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
-//
-//        })
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPreset640x480, success: { (outputPath) in
-//
-//            print("AVAssetExportPreset640x480:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
-//
-//        })
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPreset960x540, success: { (outputPath) in
-//
-//            print("AVAssetExportPreset960x540:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
-//
-//        })
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPreset1280x720, success: { (outputPath) in
-//
-//            print("AVAssetExportPreset1280x720:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
-//
-//        })
-//        TZImageManager.default().getVideoOutputPath(withAsset: self.assetData, presetName: AVAssetExportPreset1920x1080, success: { (outputPath) in
-//
-//            print("AVAssetExportPreset1920x1080:\(ICSandboxHelper.fileSize(outputPath))")
-//        }, failure: { (errorMessage, error) in
-//
-//        })
+//        }
         
+        let browser = MediaBrowser(delegate: self)
+        browser.displayActionButton = false
+        browser.displayMediaNavigationArrows = false
+        browser.displaySelectionButtons = false
+        browser.alwaysShowControls = false
+        browser.zoomPhotosToFill = true
+        browser.enableGrid = false
+        browser.startOnGrid = false
+        browser.enableSwipeToDismiss = true
+        browser.autoPlayOnAppear = false
+        browser.cachingImageCount = 2
+        browser.setCurrentIndex(at: 0)
+        
+        let nc = UINavigationController.init(rootViewController: browser)
+        nc.modalTransitionStyle = .crossDissolve
+        self.present(nc, animated: true, completion: nil)
+    }
+    
+    
+//    MediaBrowserDelegate
+    func media(for mediaBrowser: MediaBrowser, at index: Int) -> Media {
+//        if index < medias.count {
+            return medias[index]
+//        }
+//        let media = Media.init(videoURL: URL.init(string: videoUrl)!, previewImageURL: URL.init(string: "http://img.zcool.cn/community/010f87596f13e6a8012193a363df45.jpg@1280w_1l_2o_100sh.jpg"))
+//        return media
+    }
+    
+    func numberOfMedia(in mediaBrowser: MediaBrowser) -> Int {
+        return medias.count
+    }
+    
+    func didDisplayMedia(at index: Int, in mediaBrowser: MediaBrowser) {
+        print("Did start viewing photo at index \(index)")
         
     }
 }

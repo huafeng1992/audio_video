@@ -21,8 +21,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
+    /// Resource file `Info.plist`.
+    static let infoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Info", pathExtension: "plist")
+    
+    /// `bundle.url(forResource: "Info", withExtension: "plist")`
+    static func infoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.infoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
@@ -31,8 +40,72 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
+    /// Image `ImageError`.
+    static let imageError = Rswift.ImageResource(bundle: R.hostingBundle, name: "ImageError")
+    /// Image `ImageSelectedSmallOff`.
+    static let imageSelectedSmallOff = Rswift.ImageResource(bundle: R.hostingBundle, name: "ImageSelectedSmallOff")
+    /// Image `ImageSelectedSmallOn`.
+    static let imageSelectedSmallOn = Rswift.ImageResource(bundle: R.hostingBundle, name: "ImageSelectedSmallOn")
+    /// Image `PlayButtonOverlayLargeTap`.
+    static let playButtonOverlayLargeTap = Rswift.ImageResource(bundle: R.hostingBundle, name: "PlayButtonOverlayLargeTap")
+    /// Image `PlayButtonOverlayLarge`.
+    static let playButtonOverlayLarge = Rswift.ImageResource(bundle: R.hostingBundle, name: "PlayButtonOverlayLarge")
+    /// Image `UIBarButtonItemArrowLeft`.
+    static let uiBarButtonItemArrowLeft = Rswift.ImageResource(bundle: R.hostingBundle, name: "UIBarButtonItemArrowLeft")
+    /// Image `UIBarButtonItemArrowRight`.
+    static let uiBarButtonItemArrowRight = Rswift.ImageResource(bundle: R.hostingBundle, name: "UIBarButtonItemArrowRight")
+    /// Image `UIBarButtonItemGrid`.
+    static let uiBarButtonItemGrid = Rswift.ImageResource(bundle: R.hostingBundle, name: "UIBarButtonItemGrid")
+    /// Image `VideoOverlay`.
+    static let videoOverlay = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoOverlay")
+    
+    /// `UIImage(named: "ImageError", bundle: ..., traitCollection: ...)`
+    static func imageError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imageError, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ImageSelectedSmallOff", bundle: ..., traitCollection: ...)`
+    static func imageSelectedSmallOff(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imageSelectedSmallOff, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ImageSelectedSmallOn", bundle: ..., traitCollection: ...)`
+    static func imageSelectedSmallOn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.imageSelectedSmallOn, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "PlayButtonOverlayLarge", bundle: ..., traitCollection: ...)`
+    static func playButtonOverlayLarge(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.playButtonOverlayLarge, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "PlayButtonOverlayLargeTap", bundle: ..., traitCollection: ...)`
+    static func playButtonOverlayLargeTap(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.playButtonOverlayLargeTap, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "UIBarButtonItemArrowLeft", bundle: ..., traitCollection: ...)`
+    static func uiBarButtonItemArrowLeft(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uiBarButtonItemArrowLeft, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "UIBarButtonItemArrowRight", bundle: ..., traitCollection: ...)`
+    static func uiBarButtonItemArrowRight(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uiBarButtonItemArrowRight, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "UIBarButtonItemGrid", bundle: ..., traitCollection: ...)`
+    static func uiBarButtonItemGrid(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uiBarButtonItemGrid, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "VideoOverlay", bundle: ..., traitCollection: ...)`
+    static func videoOverlay(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videoOverlay, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   

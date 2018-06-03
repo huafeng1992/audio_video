@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7820B24A4D8FC0FC92A1265D /* Pods_____.framework */; };
+		DCD90D4520C4138B002EB70A /* MediaBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */; };
+		DCD90D4620C4138B002EB70A /* MediaBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */; };
+		DCD90D4720C4138B002EB70A /* MediaTapDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3B20C4138B002EB70A /* MediaTapDetectingView.swift */; };
+		DCD90D4820C4138B002EB70A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3C20C4138B002EB70A /* Media.swift */; };
+		DCD90D4920C4138B002EB70A /* MediaGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3D20C4138B002EB70A /* MediaGridViewController.swift */; };
+		DCD90D4A20C4138B002EB70A /* MediaGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3E20C4138B002EB70A /* MediaGridCell.swift */; };
+		DCD90D4B20C4138B002EB70A /* MediaBrowser.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD90D3F20C4138B002EB70A /* MediaBrowser.xcassets */; };
+		DCD90D4C20C4138B002EB70A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D4020C4138B002EB70A /* UIImageExtension.swift */; };
+		DCD90D4D20C4138B002EB70A /* MediaCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D4120C4138B002EB70A /* MediaCaptionView.swift */; };
+		DCD90D4E20C4138B002EB70A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCD90D4220C4138B002EB70A /* Info.plist */; };
+		DCD90D4F20C4138B002EB70A /* MediaZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D4320C4138B002EB70A /* MediaZoomingScrollView.swift */; };
+		DCD90D5020C4138B002EB70A /* MediaTapDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D4420C4138B002EB70A /* MediaTapDetectingImageView.swift */; };
+		DCD90D5220C4172C002EB70A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD90D5120C4172C002EB70A /* SDWebImage.framework */; };
+		DCD90D5420C41730002EB70A /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */; };
 		EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86920B65F8500B5D802 /* AppDelegate.swift */; };
 		EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86B20B65F8500B5D802 /* ViewController.swift */; };
 		EC08E86F20B65F8500B5D802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC08E86D20B65F8500B5D802 /* Main.storyboard */; };
@@ -50,6 +64,21 @@
 /* Begin PBXFileReference section */
 		6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.debug.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.debug.xcconfig"; sourceTree = "<group>"; };
 		7820B24A4D8FC0FC92A1265D /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowserDelegate.swift; sourceTree = "<group>"; };
+		DCD90D3920C4138B002EB70A /* MediaBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaBrowser.h; sourceTree = "<group>"; };
+		DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowser.swift; sourceTree = "<group>"; };
+		DCD90D3B20C4138B002EB70A /* MediaTapDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTapDetectingView.swift; sourceTree = "<group>"; };
+		DCD90D3C20C4138B002EB70A /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		DCD90D3D20C4138B002EB70A /* MediaGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGridViewController.swift; sourceTree = "<group>"; };
+		DCD90D3E20C4138B002EB70A /* MediaGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaGridCell.swift; sourceTree = "<group>"; };
+		DCD90D3F20C4138B002EB70A /* MediaBrowser.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaBrowser.xcassets; sourceTree = "<group>"; };
+		DCD90D4020C4138B002EB70A /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		DCD90D4120C4138B002EB70A /* MediaCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCaptionView.swift; sourceTree = "<group>"; };
+		DCD90D4220C4138B002EB70A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD90D4320C4138B002EB70A /* MediaZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaZoomingScrollView.swift; sourceTree = "<group>"; };
+		DCD90D4420C4138B002EB70A /* MediaTapDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTapDetectingImageView.swift; sourceTree = "<group>"; };
+		DCD90D5120C4172C002EB70A /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UICircularProgressRing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.release.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.release.xcconfig"; sourceTree = "<group>"; };
 		EC08E86620B65F8500B5D802 /* 音频视频.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "音频视频.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC08E86920B65F8500B5D802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD90D5420C41730002EB70A /* UICircularProgressRing.framework in Frameworks */,
+				DCD90D5220C4172C002EB70A /* SDWebImage.framework in Frameworks */,
 				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
 				EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */,
 				EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */,
@@ -117,6 +148,8 @@
 		99DA35B00B969A488A9EF51E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */,
+				DCD90D5120C4172C002EB70A /* SDWebImage.framework */,
 				EC48F4DF20C1218C009D60B7 /* SystemConfiguration.framework */,
 				EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */,
 				EC48F4DB20C1217B009D60B7 /* libresolv.tbd */,
@@ -132,6 +165,26 @@
 				E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCD90D3720C4138B002EB70A /* MediaBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */,
+				DCD90D3920C4138B002EB70A /* MediaBrowser.h */,
+				DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */,
+				DCD90D3B20C4138B002EB70A /* MediaTapDetectingView.swift */,
+				DCD90D3C20C4138B002EB70A /* Media.swift */,
+				DCD90D3D20C4138B002EB70A /* MediaGridViewController.swift */,
+				DCD90D3E20C4138B002EB70A /* MediaGridCell.swift */,
+				DCD90D3F20C4138B002EB70A /* MediaBrowser.xcassets */,
+				DCD90D4020C4138B002EB70A /* UIImageExtension.swift */,
+				DCD90D4120C4138B002EB70A /* MediaCaptionView.swift */,
+				DCD90D4220C4138B002EB70A /* Info.plist */,
+				DCD90D4320C4138B002EB70A /* MediaZoomingScrollView.swift */,
+				DCD90D4420C4138B002EB70A /* MediaTapDetectingImageView.swift */,
+			);
+			path = MediaBrowser;
 			sourceTree = "<group>";
 		};
 		EC08E85D20B65F8500B5D802 = {
@@ -220,6 +273,7 @@
 		EC16711E20BBA6400030E86D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DCD90D3720C4138B002EB70A /* MediaBrowser */,
 				EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */,
 				EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */,
 				EC10105820BE39FC00A1DF7F /* AlertSheet */,
@@ -270,7 +324,6 @@
 				EC08E86320B65F8500B5D802 /* Frameworks */,
 				EC08E86420B65F8500B5D802 /* Resources */,
 				666965741C6B8AEB4C184125 /* [CP] Embed Pods Frameworks */,
-				9FA2FF2557400BAED15891CE /* [CP] Copy Pods Resources */,
 				EC16711C20BBA4500030E86D /* R.swift */,
 			);
 			buildRules = (
@@ -368,7 +421,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC08E87420B65F8600B5D802 /* LaunchScreen.storyboard in Resources */,
+				DCD90D4B20C4138B002EB70A /* MediaBrowser.xcassets in Resources */,
 				EC08E87120B65F8600B5D802 /* Assets.xcassets in Resources */,
+				DCD90D4E20C4138B002EB70A /* Info.plist in Resources */,
 				EC08E86F20B65F8500B5D802 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,34 +454,23 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9FA2FF2557400BAED15891CE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D331709A891A79284BE50A93 /* [CP] Check Pods Manifest.lock */ = {
@@ -468,17 +512,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD90D4520C4138B002EB70A /* MediaBrowserDelegate.swift in Sources */,
+				DCD90D4620C4138B002EB70A /* MediaBrowser.swift in Sources */,
 				EC8875BF20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift in Sources */,
 				EC71A62420BD0DB000FEE986 /* Mp3Recorder.m in Sources */,
 				EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */,
+				DCD90D4C20C4138B002EB70A /* UIImageExtension.swift in Sources */,
 				EC08E89820B661CC00B5D802 /* VideoController.swift in Sources */,
 				EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */,
+				DCD90D4F20C4138B002EB70A /* MediaZoomingScrollView.swift in Sources */,
 				EC48F4DA20C0E2AD009D60B7 /* HFVideoManager.swift in Sources */,
 				EC10105A20BE39FD00A1DF7F /* AlertSheet.swift in Sources */,
+				DCD90D4D20C4138B002EB70A /* MediaCaptionView.swift in Sources */,
 				EC71A62F20BD37FA00FEE986 /* AudioController.swift in Sources */,
+				DCD90D5020C4138B002EB70A /* MediaTapDetectingImageView.swift in Sources */,
 				EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */,
 				EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */,
 				EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */,
+				DCD90D4920C4138B002EB70A /* MediaGridViewController.swift in Sources */,
+				DCD90D4720C4138B002EB70A /* MediaTapDetectingView.swift in Sources */,
+				DCD90D4A20C4138B002EB70A /* MediaGridCell.swift in Sources */,
+				DCD90D4820C4138B002EB70A /* Media.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
