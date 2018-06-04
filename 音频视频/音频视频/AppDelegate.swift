@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AliyunOSSiOS
+//import AliyunOSSiOS
 
 
 let AccessKeyId = "LTAITEik9vgh0oCw"

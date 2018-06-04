@@ -10,7 +10,7 @@ import Foundation
 import Photos
 import TZImagePickerController
 import AVKit
-import AliyunOSSiOS
+//import AliyunOSSiOS
 
 class VideoController: UIViewController {
     

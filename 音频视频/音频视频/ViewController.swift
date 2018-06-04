@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    let imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +46,21 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
+        
+        
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
+            make.width.height.equalTo(40)
+        }
+        
+        imageView.animationImages = [UIImage.init(named: "icon_1"), UIImage.init(named: "icon_2"), UIImage.init(named: "icon_3")] as? [UIImage]
+        imageView.animationRepeatCount = 0
+        imageView.animationDuration = 0.5
+        imageView.startAnimating()
+        imageView.stopAnimating()
+
     }
 
     override func didReceiveMemoryWarning() {

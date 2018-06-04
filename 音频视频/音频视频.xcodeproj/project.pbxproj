@@ -22,6 +22,8 @@
 		DCD90D5020C4138B002EB70A /* MediaTapDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D4420C4138B002EB70A /* MediaTapDetectingImageView.swift */; };
 		DCD90D5220C4172C002EB70A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD90D5120C4172C002EB70A /* SDWebImage.framework */; };
 		DCD90D5420C41730002EB70A /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */; };
+		DCF1F78D20C5852F00FA0673 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF1F78C20C5852F00FA0673 /* SnapKit.framework */; };
+		DCF1F78F20C5854600FA0673 /* TZImagePickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF1F78E20C5854600FA0673 /* TZImagePickerController.framework */; };
 		EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86920B65F8500B5D802 /* AppDelegate.swift */; };
 		EC08E86C20B65F8500B5D802 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E86B20B65F8500B5D802 /* ViewController.swift */; };
 		EC08E86F20B65F8500B5D802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC08E86D20B65F8500B5D802 /* Main.storyboard */; };
@@ -79,6 +81,8 @@
 		DCD90D4420C4138B002EB70A /* MediaTapDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTapDetectingImageView.swift; sourceTree = "<group>"; };
 		DCD90D5120C4172C002EB70A /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UICircularProgressRing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF1F78C20C5852F00FA0673 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF1F78E20C5854600FA0673 /* TZImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TZImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E530AFB3118D8FA2E4E654B0 /* Pods-音频视频.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.release.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.release.xcconfig"; sourceTree = "<group>"; };
 		EC08E86620B65F8500B5D802 /* 音频视频.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "音频视频.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC08E86920B65F8500B5D802 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF1F78F20C5854600FA0673 /* TZImagePickerController.framework in Frameworks */,
+				DCF1F78D20C5852F00FA0673 /* SnapKit.framework in Frameworks */,
 				DCD90D5420C41730002EB70A /* UICircularProgressRing.framework in Frameworks */,
 				DCD90D5220C4172C002EB70A /* SDWebImage.framework in Frameworks */,
 				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
@@ -148,6 +154,8 @@
 		99DA35B00B969A488A9EF51E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCF1F78E20C5854600FA0673 /* TZImagePickerController.framework */,
+				DCF1F78C20C5852F00FA0673 /* SnapKit.framework */,
 				DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */,
 				DCD90D5120C4172C002EB70A /* SDWebImage.framework */,
 				EC48F4DF20C1218C009D60B7 /* SystemConfiguration.framework */,
@@ -708,7 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36LDEQHC2A;
+				DEVELOPMENT_TEAM = EUJX9484EC;
 				INFOPLIST_FILE = "音频视频/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -728,7 +736,7 @@
 					"-framework",
 					"\"SnapKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaohe.schoolBaoNaHao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "音频视频/音频视频-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -745,7 +753,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 36LDEQHC2A;
+				DEVELOPMENT_TEAM = EUJX9484EC;
 				INFOPLIST_FILE = "音频视频/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -765,7 +773,7 @@
 					"-framework",
 					"\"SnapKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaohe.schoolBaoNaHao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "音频视频/音频视频-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

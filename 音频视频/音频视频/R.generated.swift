@@ -40,7 +40,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `ImageError`.
     static let imageError = Rswift.ImageResource(bundle: R.hostingBundle, name: "ImageError")
@@ -60,6 +60,12 @@ struct R: Rswift.Validatable {
     static let uiBarButtonItemGrid = Rswift.ImageResource(bundle: R.hostingBundle, name: "UIBarButtonItemGrid")
     /// Image `VideoOverlay`.
     static let videoOverlay = Rswift.ImageResource(bundle: R.hostingBundle, name: "VideoOverlay")
+    /// Image `icon_1`.
+    static let icon_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_1")
+    /// Image `icon_2`.
+    static let icon_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_2")
+    /// Image `icon_3`.
+    static let icon_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_3")
     
     /// `UIImage(named: "ImageError", bundle: ..., traitCollection: ...)`
     static func imageError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -104,6 +110,21 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "VideoOverlay", bundle: ..., traitCollection: ...)`
     static func videoOverlay(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.videoOverlay, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon_1", bundle: ..., traitCollection: ...)`
+    static func icon_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_1, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon_2", bundle: ..., traitCollection: ...)`
+    static func icon_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "icon_3", bundle: ..., traitCollection: ...)`
+    static func icon_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_3, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
