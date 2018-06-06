@@ -35,6 +35,7 @@
 		EC08E89E20B6697600B5D802 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08E89D20B6697600B5D802 /* RecordManager.swift */; };
 		EC10105A20BE39FD00A1DF7F /* AlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10105920BE39FC00A1DF7F /* AlertSheet.swift */; };
 		EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC16712020BBA6400030E86D /* ICSandboxHelper.m */; };
+		EC3F4C9220C7C86E00FA1D03 /* OSSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F4C9120C7C86E00FA1D03 /* OSSManager.swift */; };
 		EC48F4DA20C0E2AD009D60B7 /* HFVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */; };
 		EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EC48F4DB20C1217B009D60B7 /* libresolv.tbd */; };
 		EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */; };
@@ -104,6 +105,7 @@
 		EC16711D20BBA5660030E86D /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EC16712020BBA6400030E86D /* ICSandboxHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICSandboxHelper.m; sourceTree = "<group>"; };
 		EC16712120BBA6400030E86D /* ICSandboxHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSandboxHelper.h; sourceTree = "<group>"; };
+		EC3F4C9120C7C86E00FA1D03 /* OSSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSSManager.swift; sourceTree = "<group>"; };
 		EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HFVideoManager.swift; sourceTree = "<group>"; };
 		EC48F4DB20C1217B009D60B7 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		EC48F4DD20C12185009D60B7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -122,13 +124,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */,
+				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
+				EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */,
 				DCF1F78F20C5854600FA0673 /* TZImagePickerController.framework in Frameworks */,
 				DCF1F78D20C5852F00FA0673 /* SnapKit.framework in Frameworks */,
 				DCD90D5420C41730002EB70A /* UICircularProgressRing.framework in Frameworks */,
 				DCD90D5220C4172C002EB70A /* SDWebImage.framework in Frameworks */,
-				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
-				EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */,
-				EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */,
 				AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */,
 				EC71A62920BD0F2B00FEE986 /* libmp3lame.a in Frameworks */,
 			);
@@ -281,6 +283,7 @@
 		EC16711E20BBA6400030E86D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EC3F4C9120C7C86E00FA1D03 /* OSSManager.swift */,
 				DCD90D3720C4138B002EB70A /* MediaBrowser */,
 				EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */,
 				EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */,
@@ -537,6 +540,7 @@
 				EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */,
 				EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */,
 				EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */,
+				EC3F4C9220C7C86E00FA1D03 /* OSSManager.swift in Sources */,
 				DCD90D4920C4138B002EB70A /* MediaGridViewController.swift in Sources */,
 				DCD90D4720C4138B002EB70A /* MediaTapDetectingView.swift in Sources */,
 				DCD90D4A20C4138B002EB70A /* MediaGridCell.swift in Sources */,

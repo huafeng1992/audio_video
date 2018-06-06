@@ -11,6 +11,8 @@ import AVFoundation
 
 class AudioController: UIViewController {
     
+    var pushButton: UIButton!
+    
     var timeLab: UILabel!
     var startBtn: UIButton!
     var stopBtn: UIButton!
@@ -99,6 +101,19 @@ extension AudioController {
         
         size2Lab.text = "编码大小：\(audioPlayer.getSize(path))"
         audioPlayer.playAudio(path)
+    }
+    
+    @objc func pushButtonAction() {
+        
+        
+        let path = recorder.getMp3Path()
+        print(path)
+        
+        let ossmanager = OSSManager()
+        ossmanager.vc = self
+        ossmanager.request(filePath: path)
+        
+        
     }
 }
 
@@ -193,10 +208,23 @@ extension AudioController {
             $0.top.equalTo(playBtn2.snp.bottom).offset(40)
         }
         
+        pushButton = UIButton()
+        pushButton.setTitle("上传", for: .normal)
+        pushButton.setTitleColor(.black, for: .normal)
+        view.addSubview(pushButton)
+        pushButton.snp.makeConstraints{
+            $0.right.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-20)
+            $0.width.equalTo(50)
+            $0.height.equalTo(40)
+        }
+        
         startBtn.addTarget(self, action: #selector(startBtnClick), for: .touchUpInside)
         stopBtn.addTarget(self, action: #selector(stop), for: .touchUpInside)
         playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
         playBtn2.addTarget(self, action: #selector(playBtnClick2), for: .touchUpInside)
+        
+        pushButton.addTarget(self, action: #selector(pushButtonAction), for: .touchUpInside)
     }
     
 }
