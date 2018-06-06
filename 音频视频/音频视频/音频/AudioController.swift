@@ -109,7 +109,7 @@ extension AudioController {
         let path = recorder.getMp3Path()
         print(path)
         
-        let ossmanager = OSSManager()
+        let ossmanager = OSSManager.sharedManager
         ossmanager.vc = self
         ossmanager.request(filePath: path)
         

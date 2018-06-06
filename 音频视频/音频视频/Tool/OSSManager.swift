@@ -9,35 +9,25 @@
 import Foundation
 import AliyunOSSiOS
 
-// 已更改信息
-let OSS_STSTOKEN_URL: String = "http://192.168.1.72:7080"
-
-struct OSSManager {
+class OSSManager {
     
-    var vc: UIViewController!
+    private init() {}
     
-    // aixiao
-    let bucketName = "xiaohe-online"
+    var client: OSSClientMgr!
+    
+//    "xiaohe-online"
+    var bucketName: String!
 //    let bucketObjectKey = "offline/audios/homework"
-    let bucketObjectKey = ""
+    var bucketObjectKey: String!
     
-    let client: OSSClient = {
-
-        //直接访问鉴权服务器（推荐，token过期后可以自动更新）
-        let endpoint = "oss-cn-beijing.aliyuncs.com"
-        //直接访问鉴权服务器（推荐，token过期后可以自动更新）
-        let credential = OSSAuthCredentialProvider.init(authServerUrl: OSS_STSTOKEN_URL)
-        // 开启日志记录
-//        OSSLog.enable()
-        
-        let config = OSSClientConfiguration()
-        config.maxRetryCount = 1  // 网络请求遇到异常失败后的重试次数
-        config.timeoutIntervalForRequest = 30  // 网络请求的超时时间
-        config.timeoutIntervalForResource = 24*60*60  // 允许资源传输的最长时间
-        
-        let client = OSSClient.init(endpoint: endpoint, credentialProvider: credential, clientConfiguration: config)
-        return client
-    }()
+    
+    
+    convenience init(client: OSSClientMgr, bucketName: String, objectKey: String) {
+        self.init()
+        self.client = client
+        self.bucketName = bucketName
+        self.bucketObjectKey = objectKey
+    }
     
     // 测试
     func request(filePath: String) {
@@ -50,7 +40,20 @@ struct OSSManager {
 //        putObject(filePath: filePath)
     }
     
-    func putObject(filePath: String) {
+    enum PushObjType {
+        case filePath, data
+    }
+    
+    func pushObject(filePath: String) {
+        putObject(type: .filePath, obj: filePath, uploadProgress: nil)
+    }
+    
+    func pushObject(data: Data) {
+        putObject(type: .data, obj: data, uploadProgress: nil)
+    }
+    
+    // 上传
+    func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?) {
         
         let put: OSSPutObjectRequest = OSSPutObjectRequest()
         put.contentType = "application/octet-stream"
@@ -61,8 +64,25 @@ struct OSSManager {
         
         put.bucketName = bucketName
         put.objectKey = bucketObjectKey
-        put.uploadingFileURL = URL.init(fileURLWithPath: filePath)
-//        put.uploadingData = 直接上传NSData
+        
+        if type == .filePath {
+            put.uploadingFileURL = URL.init(fileURLWithPath: obj as! String)
+        }
+        if type == .data {
+            put.uploadingData = obj as! Data
+        }
+        
+        // 进度设置，可选
+        if uploadProgress != nil {
+            put.uploadProgress = { (bytesSent, totalBytesSent, totalBytesExpectedToSend) in
+                uploadProgress!(bytesSent, totalBytesSent, totalBytesExpectedToSend)
+            }
+        }
+        
+//        put.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
+//            // 当前上传段长度、当前已经上传总长度、一共需要上传的总长度
+//            NSLog(@"%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
+//        };
         
         let putTask: OSSTask = client.putObject(put)
         
@@ -71,7 +91,6 @@ struct OSSManager {
                 print("upload object success!")
             } else {
                 print("异常")
-                
             }
             return nil
         })
@@ -82,13 +101,13 @@ struct OSSManager {
 extension OSSManager {
     
     // 检查文件是否存在
-    func checkFileisHasService() -> Bool {
+    private func checkFileisHasService() -> Bool {
         
         return false
     }
     
     // 复制Object
-    func copyObject() {
+    private func copyObject() {
     
         let copy = OSSCopyObjectRequest()
         copy.bucketName = bucketName
@@ -101,8 +120,7 @@ extension OSSManager {
         copyTask.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -110,7 +128,7 @@ extension OSSManager {
     }
     
     // 删除Object
-    func deleteObject() {
+    private func deleteObject() {
         
         let delete = OSSDeleteObjectRequest()
         delete.bucketName = bucketName
@@ -120,8 +138,7 @@ extension OSSManager {
         deleteTask.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -129,7 +146,7 @@ extension OSSManager {
     }
     
     // 只获取Object的Meta信息
-    func getMetaInObj() {
+    private func getMetaInObj() {
         
         let head = OSSHeadObjectRequest()
         head.bucketName = bucketName
@@ -139,8 +156,7 @@ extension OSSManager {
         headTask.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -151,8 +167,8 @@ extension OSSManager {
 // BucketManager
 extension OSSManager {
     
-    func creatBucketObj() {
-        
+    private func creatBucketObj() {
+
         let create = OSSCreateBucketRequest()
         create.bucketName = bucketName
         create.xOssACL = "public-read-write"
@@ -161,8 +177,7 @@ extension OSSManager {
         createTask.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -170,49 +185,39 @@ extension OSSManager {
     }
     
     // 罗列所有Bucket
-    func getAllBucket() {
+    private func getAllBucket() {
         
         let getService = OSSGetServiceRequest()
         let getServiceTask = client.getService(getService)
         getServiceTask.continue ({ (t) -> Any? in
-//            if let result = t.result as? OSSGetBucketResult {
-            
-                
-                print("罗列所有Bucket\(t)")
-                
-                if let result = t.result as? OSSGetServiceResult {
-                    print("buckets: \(String(describing: result.buckets))")
-                    print("owner: \(result.ownerId), \(result.ownerDispName)")
-                    if result.buckets != nil {
-                        for item in result.buckets! {
-                            if let dict = item as? NSDictionary {
-                                print("BucketName: \(dict["Name"] ?? "")")
-                                print("CreationDate: \(dict["CreationDate"] ?? "")")
-                                print("Location: \(dict["Location"] ?? "")")
-                            }
+
+            print("罗列所有Bucket\(t)")
+            if let result = t.result as? OSSGetServiceResult {
+                print("buckets: \(String(describing: result.buckets))")
+                print("owner: \(result.ownerId), \(result.ownerDispName)")
+                if result.buckets != nil {
+                    for item in result.buckets! {
+                        if let dict = item as? NSDictionary {
+                            print("BucketName: \(dict["Name"] ?? "")")
+                            print("CreationDate: \(dict["CreationDate"] ?? "")")
+                            print("Location: \(dict["Location"] ?? "")")
                         }
                     }
                 }
-                
-//            }else
-//            {
-//                self.showResult(task: t)
-//            }
-            
+            }
             return nil
         })
     }
     
     // 罗列bucket中的文件
-    func getBucketInFile(bucketName: String) {
+    private func getBucketInFile(bucketName: String) {
         let getBucket = OSSGetBucketRequest()
         getBucket.bucketName = bucketName
         let getBucketTask = client.getBucket(getBucket)
         getBucketTask.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -220,7 +225,7 @@ extension OSSManager {
     }
     
     // 删除Bucket
-    func deleBucket(bucketName: String) {
+    private func deleBucket(bucketName: String) {
         let delete = OSSDeleteBucketRequest()
         delete.bucketName = bucketName
         
@@ -228,8 +233,7 @@ extension OSSManager {
         deleBucket.continue ({ (t) -> Any? in
             if let result = t.result as? OSSGetBucketResult {
                 self.showResult(task: OSSTask(result: result.contents as AnyObject))
-            }else
-            {
+            } else {
                 self.showResult(task: t)
             }
             return nil
@@ -240,26 +244,12 @@ extension OSSManager {
 
 extension OSSManager {
     
-    func ossAlert(title: String?,message:String?) -> Void {
-        let alertCtrl = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertCtrl.addAction(UIAlertAction(title: "confirm", style: UIAlertActionStyle.default, handler: { (action) in
-            print("\(action.title!) has been clicked");
-            alertCtrl.dismiss(animated: true, completion: nil)
-        }))
-        
-        DispatchQueue.main.async {
-            self.vc.present(alertCtrl, animated: true, completion: nil)
-        }
-    }
-    
     func showResult(task: OSSTask<AnyObject>?) -> Void {
         if (task?.error != nil) {
             let error: NSError = (task?.error)! as NSError
-            self.ossAlert(title: "error", message: error.description)
-        }else
-        {
+            print(error.description)
+        } else {
             let result = task?.result
-            self.ossAlert(title: "notice", message: result?.description)
             print(result?.description ?? "")
         }
     }

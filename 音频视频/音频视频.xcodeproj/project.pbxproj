@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7820B24A4D8FC0FC92A1265D /* Pods_____.framework */; };
+		DCC80D4C20C832CB00E49546 /* OSSClientMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC80D4B20C832CB00E49546 /* OSSClientMgr.swift */; };
 		DCD90D4520C4138B002EB70A /* MediaBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */; };
 		DCD90D4620C4138B002EB70A /* MediaBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */; };
 		DCD90D4720C4138B002EB70A /* MediaTapDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3B20C4138B002EB70A /* MediaTapDetectingView.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.debug.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.debug.xcconfig"; sourceTree = "<group>"; };
 		7820B24A4D8FC0FC92A1265D /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC80D4B20C832CB00E49546 /* OSSClientMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSSClientMgr.swift; sourceTree = "<group>"; };
 		DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowserDelegate.swift; sourceTree = "<group>"; };
 		DCD90D3920C4138B002EB70A /* MediaBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaBrowser.h; sourceTree = "<group>"; };
 		DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowser.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				EC3F4C9120C7C86E00FA1D03 /* OSSManager.swift */,
+				DCC80D4B20C832CB00E49546 /* OSSClientMgr.swift */,
 				DCD90D3720C4138B002EB70A /* MediaBrowser */,
 				EC8875BE20BF9C8F005AE4F5 /* PhotoImagePickerManager.swift */,
 				EC48F4D920C0E2AD009D60B7 /* HFVideoManager.swift */,
@@ -538,6 +541,7 @@
 				EC71A62F20BD37FA00FEE986 /* AudioController.swift in Sources */,
 				DCD90D5020C4138B002EB70A /* MediaTapDetectingImageView.swift in Sources */,
 				EC08E86A20B65F8500B5D802 /* AppDelegate.swift in Sources */,
+				DCC80D4C20C832CB00E49546 /* OSSClientMgr.swift in Sources */,
 				EC71A62D20BD32CC00FEE986 /* AudioPlayerManager.swift in Sources */,
 				EC16712220BBA6400030E86D /* ICSandboxHelper.m in Sources */,
 				EC3F4C9220C7C86E00FA1D03 /* OSSManager.swift in Sources */,
