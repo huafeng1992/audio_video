@@ -9,57 +9,44 @@
 import Foundation
 import AliyunOSSiOS
 
-class OSSManager {
-    
-    private init() {}
-    
-    var client: OSSClientMgr!
-    
-//    "xiaohe-online"
-    var bucketName: String!
-//    let bucketObjectKey = "offline/audios/homework"
-    var bucketObjectKey: String!
-    
-    
-    
-    convenience init(client: OSSClientMgr, bucketName: String, objectKey: String) {
-        self.init()
-        self.client = client
-        self.bucketName = bucketName
-        self.bucketObjectKey = objectKey
-    }
-    
-    // 测试
-    func request(filePath: String) {
-        
-//        getMetaInObj()
-        deleteObject()
-//        getBucketInFile(bucketName: bucketName)
-        
-//        getBucketInFile(bucketName: bucketName)
-//        putObject(filePath: filePath)
-    }
+class OSSManager: NSObject {
     
     enum PushObjType {
         case filePath, data
     }
     
-    func pushObject(filePath: String) {
-        putObject(type: .filePath, obj: filePath, uploadProgress: nil)
+    var client: OSSClient!
+    var bucketName: String!
+    var bucketObjectKey: String!
+    
+    convenience init(client: OSSClient, bucketName: String, objectKey: String) {
+        self.init()
+        self.client = client
+        self.bucketName = bucketName
+        self.bucketObjectKey = objectKey
+    }
+}
+
+// 上传
+extension OSSManager {
+    
+    //    bytesSent, totalBytesSent, totalBytesExpectedToSend
+    func pushObject(filePath: String, progress: OSSNetworkingUploadProgressBlock?) -> OSSTask<AnyObject> {
+        return putObject(type: .filePath, obj: filePath, uploadProgress: progress, complete: nil)
     }
     
-    func pushObject(data: Data) {
-        putObject(type: .data, obj: data, uploadProgress: nil)
+    func pushObject(data: Data, progress: OSSNetworkingUploadProgressBlock?) -> OSSTask<AnyObject> {
+        return putObject(type: .data, obj: data, uploadProgress: progress, complete: nil)
     }
     
     // 上传
-    func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?) {
+    func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?, complete: ((OSSTask<AnyObject>) -> Any)?) -> OSSTask<AnyObject> {
         
         let put: OSSPutObjectRequest = OSSPutObjectRequest()
-        put.contentType = "application/octet-stream"
+        //  put.contentType = "application/octet-stream"
         // 设置MD5校验，可选
-
-//            [OSSUtil base64Md5ForFilePath:@"<filePath>"]; // 如果是文件路径
+        
+        // [OSSUtil base64Md5ForFilePath:@"<filePath>"]; // 如果是文件路径
         // put.contentMd5 = [OSSUtil base64Md5ForData:<NSData *>]; // 如果是二进制数据
         
         put.bucketName = bucketName
@@ -75,23 +62,24 @@ class OSSManager {
         // 进度设置，可选
         if uploadProgress != nil {
             put.uploadProgress = { (bytesSent, totalBytesSent, totalBytesExpectedToSend) in
+                // 当前上传段长度、当前已经上传总长度、一共需要上传的总长度
                 uploadProgress!(bytesSent, totalBytesSent, totalBytesExpectedToSend)
             }
         }
         
-//        put.uploadProgress = ^(int64_t bytesSent, int64_t totalByteSent, int64_t totalBytesExpectedToSend) {
-//            // 当前上传段长度、当前已经上传总长度、一共需要上传的总长度
-//            NSLog(@"%lld, %lld, %lld", bytesSent, totalByteSent, totalBytesExpectedToSend);
-//        };
+        let task = client.putObject(put)
         
-        let putTask: OSSTask = client.putObject(put)
         
-        putTask.continue({(task) -> OSSTask<AnyObject>? in
-            if task.error == nil {
-                print("upload object success!")
-            } else {
-                print("异常")
+        return task.continue({ (t) -> Any? in
+    
+            if complete != nil {
+                return complete!(t)
             }
+//            if t.error == nil {
+//                self.showResult(task: t)
+//            } else {
+//                print("上传异常")
+//            }
             return nil
         })
     }
@@ -128,7 +116,7 @@ extension OSSManager {
     }
     
     // 删除Object
-    private func deleteObject() {
+    func deleteObject() {
         
         let delete = OSSDeleteObjectRequest()
         delete.bucketName = bucketName

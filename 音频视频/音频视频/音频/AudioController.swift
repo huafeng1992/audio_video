@@ -12,6 +12,7 @@ import AVFoundation
 class AudioController: UIViewController {
     
     var pushButton: UIButton!
+    var deleButton: UIButton!
     
     var timeLab: UILabel!
     var startBtn: UIButton!
@@ -106,13 +107,22 @@ extension AudioController {
     @objc func pushButtonAction() {
         
         
-        let path = recorder.getMp3Path()
+        let path = recorder.getOrigPath()
         print(path)
         
-        let ossmanager = OSSManager.sharedManager
-        ossmanager.vc = self
-        ossmanager.request(filePath: path)
+        let ossManager = OSSManagerModel.init(upType: .filePath, bucketName: BUCKET_NAME, objectkey_fix: OBJECTKEY_FIX, objectkey_path: "orgin.mp3")
+        ossManager.filePath = path
+        let ossManager1 = OSSManagerModel.init(upType: .filePath, bucketName: BUCKET_NAME, objectkey_fix: OBJECTKEY_FIX, objectkey_path: "small.mp3")
+        ossManager1.filePath = path
         
+        AXOSSManager.queue(putObjArray: [ossManager, ossManager1])
+        
+    }
+    
+    @objc func deleButtonAction() {
+//        "offline/audios/homework/test"
+        let ossmanager = OSSManager.init(client: OSSClientMgr.client(), bucketName: "xiaohe-online", objectKey: "\(BUCKET_NAME)/video.mp3")
+        ossmanager.deleteObject()
         
     }
 }
@@ -219,12 +229,24 @@ extension AudioController {
             $0.height.equalTo(40)
         }
         
+        deleButton = UIButton()
+        deleButton.setTitle("删除", for: .normal)
+        deleButton.setTitleColor(.black, for: .normal)
+        view.addSubview(deleButton)
+        deleButton.snp.makeConstraints{
+            $0.width.height.equalTo(pushButton)
+            $0.right.equalTo(pushButton.snp.left).offset(-10)
+            $0.centerY.equalTo(pushButton)
+        }
+        
+        
         startBtn.addTarget(self, action: #selector(startBtnClick), for: .touchUpInside)
         stopBtn.addTarget(self, action: #selector(stop), for: .touchUpInside)
         playBtn.addTarget(self, action: #selector(playBtnClick), for: .touchUpInside)
         playBtn2.addTarget(self, action: #selector(playBtnClick2), for: .touchUpInside)
         
         pushButton.addTarget(self, action: #selector(pushButtonAction), for: .touchUpInside)
+        deleButton.addTarget(self, action: #selector(deleButtonAction), for: .touchUpInside)
     }
     
 }
