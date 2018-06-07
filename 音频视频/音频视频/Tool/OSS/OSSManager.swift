@@ -31,16 +31,16 @@ class OSSManager: NSObject {
 extension OSSManager {
     
     //    bytesSent, totalBytesSent, totalBytesExpectedToSend
-    func pushObject(filePath: String, progress: OSSNetworkingUploadProgressBlock?) -> OSSTask<AnyObject> {
-        return putObject(type: .filePath, obj: filePath, uploadProgress: progress, complete: nil)
+    func pushObject(filePath: String, progress: OSSNetworkingUploadProgressBlock?, complete: @escaping (OSSTask<AnyObject>) -> Any?) -> OSSTask<AnyObject> {
+        return putObject(type: .filePath, obj: filePath, uploadProgress: progress, complete: complete)
     }
     
-    func pushObject(data: Data, progress: OSSNetworkingUploadProgressBlock?) -> OSSTask<AnyObject> {
-        return putObject(type: .data, obj: data, uploadProgress: progress, complete: nil)
+    func pushObject(data: Data, progress: OSSNetworkingUploadProgressBlock?, complete: @escaping (OSSTask<AnyObject>) -> Any?) -> OSSTask<AnyObject> {
+        return putObject(type: .data, obj: data, uploadProgress: progress, complete: complete)
     }
     
     // 上传
-    func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?, complete: ((OSSTask<AnyObject>) -> Any)?) -> OSSTask<AnyObject> {
+    private func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?, complete: @escaping (OSSTask<AnyObject>) -> Any?) -> OSSTask<AnyObject> {
         
         let put: OSSPutObjectRequest = OSSPutObjectRequest()
         //  put.contentType = "application/octet-stream"
@@ -68,20 +68,7 @@ extension OSSManager {
         }
         
         let task = client.putObject(put)
-        
-        
-        return task.continue({ (t) -> Any? in
-    
-            if complete != nil {
-                return complete!(t)
-            }
-//            if t.error == nil {
-//                self.showResult(task: t)
-//            } else {
-//                print("上传异常")
-//            }
-            return nil
-        })
+        return task.continue(complete)
     }
 }
 

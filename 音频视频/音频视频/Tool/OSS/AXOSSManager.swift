@@ -30,12 +30,14 @@ class OSSManagerModel {
 
 class AXOSSManager: NSObject {
     
-    class func queue(putObjArray: [OSSManagerModel]) {
+    class func queue(putObjArray: [OSSManagerModel], allComplete: @escaping () -> Void, error: @escaping () -> Void) {
         
         //获取系统存在的全局队列
         let queue = DispatchQueue.global(qos: .default)
         //定义一个group
         let group = DispatchGroup()
+        
+        var finishCount = putObjArray.count
         
         for putObjReq in putObjArray {
             
@@ -46,8 +48,11 @@ class AXOSSManager: NSObject {
                     
                     if let filePath = putObjReq.filePath {
                         let ossmanager = OSSManager.init(client: OSSClientMgr.client(), bucketName: putObjReq.bucketName, objectKey: putObjReq.objectkey)
-                        ossmanager.pushObject(filePath: filePath, progress: nil, complete: { (t) -> Any in
-                            
+                        ossmanager.pushObject(filePath: filePath, progress: nil, complete: { (task) -> Any? in
+                            if task.error == nil {
+                                finishCount -= 1
+                            }
+                            return nil
                         }).waitUntilFinished()
                     }
                 }
@@ -56,8 +61,12 @@ class AXOSSManager: NSObject {
                     
                     if let data = putObjReq.data {
                         let ossmanager = OSSManager.init(client: OSSClientMgr.client(), bucketName: putObjReq.bucketName, objectKey: putObjReq.objectkey)
-                        ossmanager.pushObject(data: data, progress: nil).waitUntilFinished()
-
+                        ossmanager.pushObject(data: data, progress: nil, complete: { (task) -> Any? in
+                            if task.error == nil {
+                                finishCount -= 1
+                            }
+                            return nil
+                        }).waitUntilFinished()
                     }
                 }
             }
@@ -66,6 +75,12 @@ class AXOSSManager: NSObject {
         //1,所有任务执行结束汇总，不阻塞当前线程
         group.notify(queue: .global(), execute: {
             print("group done")
+            print(finishCount)
+            if finishCount == 0 {
+                allComplete()
+            } else {
+                error()
+            }
         })
         
         group.wait()   
