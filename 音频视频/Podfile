@@ -5,7 +5,7 @@ target '音频视频' do
 
 use_frameworks!
 
-
+pod 'SVProgressHUD'
 pod 'MBProgressHUD', '~> 1.1.0'
 pod 'SnapKit'
 pod 'R.swift'

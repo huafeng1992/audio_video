@@ -10,8 +10,10 @@ import Foundation
 import Photos
 import TZImagePickerController
 import AVKit
-//import AliyunOSSiOS
+
 import MBProgressHUD
+import SVProgressHUD
+
 
 
 
@@ -35,8 +37,13 @@ class VideoController: UIViewController {
         
         title = "Video"
         view.backgroundColor = .white
-        
-        
+//        SVProgressHUD.setBackgroundColor(UIColor.green)
+//        SVProgressHUD.setMinimumSize(.init(width: kw, height: kh))
+//        let newview = UIView()
+//        newview.backgroundColor = .red
+//
+        SVProgressHUD.setDefaultMaskType(.clear)
+    
 //        // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
 //        let credential = OSSStsTokenCredentialProvider.init(accessKeyId: AccessKeyId, secretKeyId: AccessKeySecret, securityToken: "SecurityToken")
 //        let client = OSSClient.init(endpoint: endpoint, credentialProvider: credential)
@@ -153,12 +160,15 @@ extension VideoController: TZImagePickerControllerDelegate, MediaBrowserDelegate
         PhotoImagePickerManager.manager.getMediaInfoFromAsset(asset: self.assetData) { (name, data, avAsset) in
             
             print("-------*上传中*-------")
-            
-            let ossModel = OSSManagerModel.init(homework: .data, dataType: .videos)
+            SVProgressHUD.show()
+            let ossModel = OSSManagerModel.init(upType: .data, bucketName: BUCKET_NAME, objectkey_prefix: "test", dataType: .videos, objectkey_name: .homework, objectkey_md5path: "视频测试1")
             ossModel.data = data as! Data
-            AXOSSManager.queue(putObjArray: [ossModel], allComplete: {
-                
-                
+            
+            let ossModel1 = OSSManagerModel.init(upType: .data, bucketName: BUCKET_NAME, objectkey_prefix: "test", dataType: .videos, objectkey_name: .homework, objectkey_md5path: "视频测试2")
+            ossModel1.data = data as! Data
+            
+            AXOSSManager.queue(putObjArray: [ossModel, ossModel1], allComplete: {
+                SVProgressHUD.dismiss()
                 print("-------*成功上传*-------")
             }, error: {
                 

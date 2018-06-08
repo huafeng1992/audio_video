@@ -92,6 +92,7 @@ class AXOSSManager: NSObject {
         
         //获取系统存在的全局队列
         let queue = DispatchQueue.global(qos: .default)
+        
         //定义一个group
         let group = DispatchGroup()
         
@@ -100,8 +101,8 @@ class AXOSSManager: NSObject {
         for putObjReq in putObjArray {
             
             //并发任务，顺序执行
+//            queue.async(group: group, qos: .default, flags: .assignCurrentContext) {
             queue.async(group: group) {
-                
                 if putObjReq.upType == .filePath {
                     
                     if let filePath = putObjReq.filePath {

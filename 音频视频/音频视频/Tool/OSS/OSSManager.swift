@@ -43,7 +43,7 @@ extension OSSManager {
     private func putObject(type: PushObjType, obj: Any, uploadProgress: OSSNetworkingUploadProgressBlock?, complete: @escaping (OSSTask<AnyObject>) -> Any?) -> OSSTask<AnyObject> {
         
         let put: OSSPutObjectRequest = OSSPutObjectRequest()
-        //  put.contentType = "application/octet-stream"
+        put.contentType = "application/octet-stream"
         // 设置MD5校验，可选
         
         // [OSSUtil base64Md5ForFilePath:@"<filePath>"]; // 如果是文件路径
@@ -68,7 +68,7 @@ extension OSSManager {
         }
         
         let task = client.putObject(put)
-        return task.continue(complete)
+        return task.continue(successBlock: complete)
     }
 }
 

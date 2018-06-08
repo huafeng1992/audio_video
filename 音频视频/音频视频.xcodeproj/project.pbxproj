@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC72D354E7083325900845D5 /* Pods_____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7820B24A4D8FC0FC92A1265D /* Pods_____.framework */; };
+		DCA5E34F20CAE35100E63FE6 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5E34E20CAE35100E63FE6 /* SVProgressHUD.framework */; };
 		DCD90D4520C4138B002EB70A /* MediaBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */; };
 		DCD90D4620C4138B002EB70A /* MediaBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */; };
 		DCD90D4720C4138B002EB70A /* MediaTapDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD90D3B20C4138B002EB70A /* MediaTapDetectingView.swift */; };
@@ -69,7 +70,8 @@
 
 /* Begin PBXFileReference section */
 		6D14E297D19B2429324FFD57 /* Pods-音频视频.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-音频视频.debug.xcconfig"; path = "Pods/Target Support Files/Pods-音频视频/Pods-音频视频.debug.xcconfig"; sourceTree = "<group>"; };
-		7820B24A4D8FC0FC92A1265D /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_____.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7820B24A4D8FC0FC92A1265D /* Pods_____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA5E34E20CAE35100E63FE6 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD90D3820C4138B002EB70A /* MediaBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowserDelegate.swift; sourceTree = "<group>"; };
 		DCD90D3920C4138B002EB70A /* MediaBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaBrowser.h; sourceTree = "<group>"; };
 		DCD90D3A20C4138B002EB70A /* MediaBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBrowser.swift; sourceTree = "<group>"; };
@@ -96,10 +98,10 @@
 		EC08E87320B65F8600B5D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC08E87520B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC08E87A20B65F8600B5D802 /* 音频视频Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "音频视频Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC08E87E20B65F8600B5D802 /* ____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ____Tests.swift; sourceTree = "<group>"; };
+		EC08E87E20B65F8600B5D802 /* ____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____Tests.swift"; sourceTree = "<group>"; };
 		EC08E88020B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC08E88520B65F8600B5D802 /* 音频视频UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "音频视频UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC08E88920B65F8600B5D802 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ____UITests.swift; sourceTree = "<group>"; };
+		EC08E88920B65F8600B5D802 /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
 		EC08E88B20B65F8600B5D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC08E89720B661CC00B5D802 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		EC08E89D20B6697600B5D802 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA5E34F20CAE35100E63FE6 /* SVProgressHUD.framework in Frameworks */,
 				EC48F4DC20C1217B009D60B7 /* libresolv.tbd in Frameworks */,
 				EC48F4E020C1218C009D60B7 /* SystemConfiguration.framework in Frameworks */,
 				EC48F4DE20C12185009D60B7 /* CoreTelephony.framework in Frameworks */,
@@ -162,6 +165,7 @@
 		99DA35B00B969A488A9EF51E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCA5E34E20CAE35100E63FE6 /* SVProgressHUD.framework */,
 				DCF1F78E20C5854600FA0673 /* TZImagePickerController.framework */,
 				DCF1F78C20C5852F00FA0673 /* SnapKit.framework */,
 				DCD90D5320C41730002EB70A /* UICircularProgressRing.framework */,
@@ -353,7 +357,6 @@
 				EC08E86420B65F8500B5D802 /* Resources */,
 				666965741C6B8AEB4C184125 /* [CP] Embed Pods Frameworks */,
 				EC16711C20BBA4500030E86D /* R.swift */,
-				981E70291BA1B8C100A9F404 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,6 +488,7 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
@@ -495,6 +499,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
@@ -502,21 +507,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		981E70291BA1B8C100A9F404 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-音频视频/Pods-音频视频-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D331709A891A79284BE50A93 /* [CP] Check Pods Manifest.lock */ = {
@@ -761,7 +751,10 @@
 				DEVELOPMENT_TEAM = EUJX9484EC;
 				INFOPLIST_FILE = "音频视频/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/音频视频/音频/lame/",
@@ -795,7 +788,10 @@
 				DEVELOPMENT_TEAM = EUJX9484EC;
 				INFOPLIST_FILE = "音频视频/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/音频视频/音频/lame/",
@@ -825,7 +821,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "音频视频Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -841,7 +841,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "音频视频Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -856,7 +860,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "音频视频UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -871,7 +879,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "音频视频UITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "WHF.----UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
