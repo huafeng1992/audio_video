@@ -110,13 +110,17 @@ extension AudioController {
         let path = recorder.getOrigPath()
         print(path)
         
-        let ossManager = OSSManagerModel.init(upType: .filePath, bucketName: BUCKET_NAME, objectkey_fix: OBJECTKEY_FIX, objectkey_path: "orgin.mp3")
+        let ossManager = OSSManagerModel.init(homework: .filePath, dataType: .audios)
         ossManager.filePath = path
-        let ossManager1 = OSSManagerModel.init(upType: .filePath, bucketName: BUCKET_NAME, objectkey_fix: OBJECTKEY_FIX, objectkey_path: "small.mp3")
+        let ossManager1 = OSSManagerModel.init(homework: .filePath, dataType: .audios)
         ossManager1.filePath = path
         
-        AXOSSManager.queue(putObjArray: [ossManager, ossManager1])
         
+        AXOSSManager.queue(putObjArray: [ossManager, ossManager1], allComplete: {
+            print("全部上传成功")
+        }, error: {
+            print("error")
+        })
     }
     
     @objc func deleButtonAction() {

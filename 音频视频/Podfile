@@ -5,6 +5,8 @@ target '音频视频' do
 
 use_frameworks!
 
+
+pod 'MBProgressHUD', '~> 1.1.0'
 pod 'SnapKit'
 pod 'R.swift'
 pod 'TZImagePickerController'

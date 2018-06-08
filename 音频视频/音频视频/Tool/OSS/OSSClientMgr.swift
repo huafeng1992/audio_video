@@ -15,11 +15,11 @@ import AliyunOSSiOS
 //AccessKeySecret：mlypYKR8z0hUgAlLwmppzQ2YKgNVUH
 
 
-let OSS_STSTOKEN_URL: String = "http://192.168.1.72:7080"
-//let OSS_STSTOKEN_URL: String = "https://apiaixiaofz.xiaohe.com/ali_index.php"
+//let OSS_STSTOKEN_URL: String = "http://192.168.1.72:7080"
+let OSS_STSTOKEN_URL: String = "https://apiaixiaofz.xiaohe.com/ali_index.php"
 let ENDPOINT = "oss-cn-beijing.aliyuncs.com"
 let BUCKET_NAME = "xiaohe-online"
-let OBJECTKEY_FIX = "offline/audios/homework"
+let OBJECTKEY_FIX = "offline"
 
 class OSSClientMgr {
         

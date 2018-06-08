@@ -11,6 +11,9 @@ import Photos
 import TZImagePickerController
 import AVKit
 //import AliyunOSSiOS
+import MBProgressHUD
+
+
 
 class VideoController: UIViewController {
     
@@ -129,22 +132,40 @@ extension VideoController: TZImagePickerControllerDelegate, MediaBrowserDelegate
 //
 //        }
         
-        let browser = MediaBrowser(delegate: self)
-        browser.displayActionButton = false
-        browser.displayMediaNavigationArrows = false
-        browser.displaySelectionButtons = false
-        browser.alwaysShowControls = false
-        browser.zoomPhotosToFill = true
-        browser.enableGrid = false
-        browser.startOnGrid = false
-        browser.enableSwipeToDismiss = true
-        browser.autoPlayOnAppear = false
-        browser.cachingImageCount = 2
-        browser.setCurrentIndex(at: 0)
+//        let browser = MediaBrowser(delegate: self)
+//        browser.displayActionButton = false
+//        browser.displayMediaNavigationArrows = false
+//        browser.displaySelectionButtons = false
+//        browser.alwaysShowControls = false
+//        browser.zoomPhotosToFill = true
+//        browser.enableGrid = false
+//        browser.startOnGrid = false
+//        browser.enableSwipeToDismiss = true
+//        browser.autoPlayOnAppear = false
+//        browser.cachingImageCount = 2
+//        browser.setCurrentIndex(at: 0)
+//
+//        let nc = UINavigationController.init(rootViewController: browser)
+//        nc.modalTransitionStyle = .crossDissolve
+//        self.present(nc, animated: true, completion: nil)
         
-        let nc = UINavigationController.init(rootViewController: browser)
-        nc.modalTransitionStyle = .crossDissolve
-        self.present(nc, animated: true, completion: nil)
+   
+        PhotoImagePickerManager.manager.getMediaInfoFromAsset(asset: self.assetData) { (name, data, avAsset) in
+            
+            print("-------*上传中*-------")
+            
+            let ossModel = OSSManagerModel.init(homework: .data, dataType: .videos)
+            ossModel.data = data as! Data
+            AXOSSManager.queue(putObjArray: [ossModel], allComplete: {
+                
+                
+                print("-------*成功上传*-------")
+            }, error: {
+                
+            })
+        }
+        
+        
     }
     
     
